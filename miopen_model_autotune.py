@@ -18,7 +18,7 @@ for model, bs_list in model_bs_map.items():
 	if model is not "Inception_v2":
 		for bs in bs_list:
 			print model, bs
-			os.system("MIOPEN_FIND_ENFORCE=3 python pytorch/build_caffe2/caffe2/python/convnet_benchmarks.py --batch_size " \
+			os.system("MIOPEN_FIND_ENFORCE=3 python /pytorch/build_caffe2/caffe2/python/convnet_benchmarks.py --batch_size " \
 					+ str(bs) + " --model " + model)
 	else:
 		for bs in bs_list:
