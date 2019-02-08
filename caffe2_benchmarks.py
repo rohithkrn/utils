@@ -6,6 +6,7 @@ import re
 import pandas
 import argparse
 
+import pdb
 from collections import OrderedDict
 
 ## Dictionary which maps model and corresponding 'batch_size's 
@@ -82,7 +83,12 @@ def run_sgpu_benchmarks(args):
 			args.batch_size = batch_size
 			benchmark_cmd, log_file = get_benchmark_cmd(args)
 			log_file += ".log"
-			log_file = os.path.join(args.logs_dir, log_file)
+			log_file_path = os.path.join(args.logs_dir, "logs")
+			
+			if not os.path.exists(log_file_path):
+				os.makedirs(log_file_path)
+
+			log_file = os.path.join(log_file_path, log_file)
 
 			print("\n>>>>>>>>>> Running config >>>>>>>>")
 			print(benchmark_cmd + "\n")
@@ -109,8 +115,13 @@ def run_sgpu_benchmarks(args):
 	df = pandas.DataFrame(results_dict)
 	print(df)
 
-	csv_file =  'results_sgpu.csv'
-	df.to_csv(os.path.join(args.logs_dir, csv_file))
+	csv_file_path =  os.path.join(args.logs_dir, 'csv')
+
+	if not os.path.exists(csv_file_path):
+		os.makedirs(csv_file_path)
+
+	csv_file = os.path.join(csv_file_path, "results_sgpu.csv")	
+	df.to_csv(csv_file)
 
 
 def run_mgpu_benchmarks(args):
@@ -132,8 +143,13 @@ def run_mgpu_benchmarks(args):
 				args.batch_size = num_gpus*batch_size
 				benchmark_cmd, log_file = get_benchmark_cmd(args)
 				log_file += ".log"
-				log_file = os.path.join(args.logs_dir, log_file)
-				
+				log_file_path = os.path.join(args.logs_dir, "logs")
+			
+				if not os.path.exists(log_file_path):
+					os.makedirs(log_file_path)
+
+				log_file = os.path.join(log_file_path, log_file)
+
 				print("\n>>>>>>>>>> Running config >>>>>>>>>>>")
 				print(benchmark_cmd + "\n")
 
@@ -153,8 +169,13 @@ def run_mgpu_benchmarks(args):
 		df = pandas.DataFrame(results_dict)
 		print(df)
 
-		csv_file = model + '_mgpu.csv'
-		df.to_csv(os.path.join(args.logs_dir, csv_file))
+		csv_file_path =  os.path.join(args.logs_dir, 'csv')
+
+		if not os.path.exists(csv_file_path):
+			os.makedirs(csv_file_path)
+
+		csv_file = os.path.join(csv_file_path, model + "_mgpu.csv")	
+		df.to_csv(csv_file)
 
 	# print failing configs:
 	if len(failing_configs) > 0:
@@ -167,7 +188,7 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(
         description="Runs Caffe2 convnet benchmarks.")
 	parser.add_argument("--logs_dir", type=str, default=None, required=True,
-                        help="Directory path to store logs.")
+                        help="Directory path to store logs/results.")
 	parser.add_argument("--dtype", type=str, default='float', 
     					choices=["float", "float16"])
 	parser.add_argument("--num_gpus", type=int, default=1,
@@ -181,9 +202,10 @@ if __name__ == "__main__":
 
 	if os.path.exists(args.logs_dir):
 		print("logs_dir already exists. Provide an alternate directory")
+		exit(1)
 	else:
 		os.makedirs(args.logs_dir)
-
+		
 	if args.mgpu:
 		run_mgpu_benchmarks(args)
 	else:					
