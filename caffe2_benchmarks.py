@@ -9,7 +9,7 @@ import argparse
 from collections import OrderedDict
 ## Dictionary which maps model and corresponding 'batch_size's 
 ## to run benchmarks. Comment the models you do not want to run. 
-"""
+
 model_bs_map = OrderedDict([
 			 ('AlexNet', [1, 32, 64, 256]),
 			 ('VGGA', [1, 32, 64]),
@@ -18,11 +18,6 @@ model_bs_map = OrderedDict([
 			 ('Resnet101', [1, 32])
 			 ('Resnext101', [1, 32])
 			 ])
-"""
-model_bs_map = {
-			 'AlexNet':[1, 64],
-			 'VGGA':[1, 256],
-			 }
 
 script_path = "caffe2/python/convnet_benchmarks_dpm.py"
 
@@ -153,7 +148,7 @@ def run_mgpu_benchmarks(args):
 
 			results_dict[num_gpus] = results_with_bs
 
-		print("##### Results #####")
+		print("##### Results for {} #####".format(model))
 		df = pandas.DataFrame(results_dict)
 		print(df)
 
