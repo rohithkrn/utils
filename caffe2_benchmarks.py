@@ -187,6 +187,6 @@ if __name__ == "__main__":
 		os.makedirs(args.logs_dir)
 
 	if args.mgpu:
-		run_mgpu_benchmarks(args, model)
+		run_mgpu_benchmarks(args)
 	else:					
    		run_sgpu_benchmarks(args)
