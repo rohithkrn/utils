@@ -7,19 +7,20 @@ import pandas
 import argparse
 
 from collections import OrderedDict
+
 ## Dictionary which maps model and corresponding 'batch_size's 
 ## to run benchmarks. Comment the models you do not want to run. 
-
 model_bs_map = OrderedDict([
 			 ('AlexNet', [1, 32, 64, 256]),
 			 ('VGGA', [1, 32, 64]),
-			 ('Inception', [1, 32, 64, 128],)
-			 ('Resnet50'. [1, 32, 64]),
-			 ('Resnet101', [1, 32])
-			 ('Resnext101', [1, 32])
+			 ('Inception', [1, 32, 64, 128]),
+			 ('Resnet50', [1, 32, 64]),
+			 ('Resnet101', [1, 32]),
+			 ('Resnext101', [1, 32]),
 			 ])
 
-script_path = "caffe2/python/convnet_benchmarks_dpm.py"
+## set this path to convnet_benchmarks_dpm.py
+script_path = "convnet_benchmarks_dpm.py"
 
 
 def get_benchmark_cmd(args):
@@ -27,7 +28,7 @@ def get_benchmark_cmd(args):
 	benchmark_cmd = "python " + script_path + " --model " + args.model + \
 						" --num_gpus " + str(args.num_gpus) + \
 						" --batch_size " + str(args.batch_size)
-	log_file = args.model + "_" + str(args.batch_size)
+	log_file = args.model + "_" + str(args.batch_size/args.num_gpus)
 
 	if args.dtype == "float16":
 		benchmark_cmd += " --dtype float16"
@@ -166,7 +167,7 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser(
         description="Runs Caffe2 convnet benchmarks.")
 	parser.add_argument("--logs_dir", type=str, default=None, required=True,
-                        help="Path to directory to store logs.")
+                        help="Directory path to store logs.")
 	parser.add_argument("--dtype", type=str, default='float', 
     					choices=["float", "float16"])
 	parser.add_argument("--num_gpus", type=int, default=1,
@@ -178,7 +179,9 @@ if __name__ == "__main__":
 
 	args = parser.parse_args()
 
-	if not os.path.exists(args.logs_dir):
+	if os.path.exists(args.logs_dir):
+		print("logs_dir already exists. Provide an alternate directory")
+	else:
 		os.makedirs(args.logs_dir)
 
 	if args.mgpu:
