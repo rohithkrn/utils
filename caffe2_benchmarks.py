@@ -6,7 +6,6 @@ import re
 import pandas
 import argparse
 
-import pdb
 from collections import OrderedDict
 ## Dictionary which maps model and corresponding 'batch_size's 
 ## to run benchmarks. Comment the models you do not want to run. 
