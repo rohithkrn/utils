@@ -6,7 +6,6 @@ import re
 import pandas
 import argparse
 
-import pdb
 from collections import OrderedDict
 
 ## Dictionary which maps model and corresponding 'batch_size's 
@@ -29,7 +28,8 @@ def get_benchmark_cmd(args):
 	benchmark_cmd = "python " + script_path + " --model " + args.model + \
 						" --num_gpus " + str(args.num_gpus) + \
 						" --batch_size " + str(args.batch_size)
-	log_file = args.model + "_" + str(args.batch_size/args.num_gpus)
+	log_file = args.model + "_" + str(args.batch_size/args.num_gpus) + \
+					"_" + str(args.num_gpus) + 'g'
 
 	if args.dtype == "float16":
 		benchmark_cmd += " --dtype float16"
@@ -41,9 +41,6 @@ def get_benchmark_cmd(args):
 
 	if args.layer_wise_benchmark:
 		benchmark_cmd += " --net_type simple --layer_wise_benchmark"
-
-	if args.num_gpus > 1:
-		log_file += "_" + str(args.num_gpus) + "g"
 
 	return benchmark_cmd, log_file
 
@@ -107,9 +104,11 @@ def run_sgpu_benchmarks(args):
 
 	# print failing configs:
 	if len(failing_configs) > 0:
-		print("######## FAILING CONFIGS ##########")
-		for config in failing_configs:
-			print config
+		with open(os.path.join(args.logs_dir, "failed_configs.log"), 'w+') as fc:
+			print("######## FAILING CONFIGS ##########")
+			for config in failing_configs:
+				print(config)
+				fc.write(config+'\n')
 		
 	print("##### Results - Batch Size vs Imgs/sec #####")	
 	df = pandas.DataFrame(results_dict)
@@ -179,9 +178,11 @@ def run_mgpu_benchmarks(args):
 
 	# print failing configs:
 	if len(failing_configs) > 0:
-		print("######## FAILING CONFIGS ##########")
-		for config in failing_configs:
-			print(config)	
+		with open(os.path.join(args.logs_dir, "failed_configs.log"), 'w+') as fc:
+			print("######## FAILING CONFIGS ##########")
+			for config in failing_configs:
+				print(config)
+				fc.write(config+'\n')	
 
 if __name__ == "__main__":
 
