@@ -91,9 +91,9 @@ def run_sgpu_benchmarks(args):
 			print(benchmark_cmd + "\n")
 
 			images_per_sec, ret_code = run_benchmark_cmd(benchmark_cmd,
-														 log_file,
-														 args.batch_size,
-														 args.layer_wise_benchmark)
+                                                         log_file,
+                                                         args.batch_size,
+                                                         args.layer_wise_benchmark)
 			
 			if ret_code == 0:
 				single_model_results[batch_size] = images_per_sec
@@ -153,9 +153,9 @@ def run_mgpu_benchmarks(args):
 				print(benchmark_cmd + "\n")
 
 				images_per_sec, ret_code = run_benchmark_cmd(benchmark_cmd,
-														 	 log_file,
-														 	 args.batch_size,
-														 	 args.layer_wise_benchmark)
+                                                             log_file,
+                                                             args.batch_size,
+                                                             args.layer_wise_benchmark)
 
 				if ret_code == 0:
 					results_with_bs[batch_size] = images_per_sec
