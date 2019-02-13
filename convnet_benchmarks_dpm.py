@@ -760,6 +760,7 @@ def GetArgumentParser():
     parser.add_argument("--use-nvtx", default=False, action='store_true')
     parser.add_argument("--htrace_span_log_path", type=str)
     parser.add_argument("--dtype", default='float', choices=['float', 'float16'])
+    parser.add_argument("--image_size", default=None, type=int, help="size of input image")
     return parser
 
 
@@ -786,4 +787,8 @@ if __name__ == '__main__':
             'Resnet101': [Resnet101,224],
             'Resnext101': [Resnext101, 224],
         }
+
+        if args.image_size is not None:
+            model_map[args.model][1] =  args.image_size
+
         Benchmark(args, model_map)
