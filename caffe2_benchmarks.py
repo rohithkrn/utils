@@ -11,12 +11,12 @@ from collections import OrderedDict
 # Dictionary which maps model and corresponding 'batch_size's
 # to run benchmarks. Comment the models you do not want to run.
 model_bs_map = OrderedDict([
-    ('AlexNet', [1, 32, 64, 256]),
-    ('VGGA', [1, 32, 64]),
-    ('Inception', [1, 32, 64, 128]),
-    ('Resnet50', [1, 32, 64]),
-    ('Resnet101', [1, 32]),
-    ('Resnext101', [1, 32]),
+    ('AlexNet', [64, 256, 1024]),
+    ('VGGA', [32, 64]),
+    ('Inception', [64, 128]),
+    ('Resnet50', [32, 64]),
+    ('Resnet101', [32, 64]),
+    ('Resnext101', [32, 64]),
 ])
 
 # set this path to convnet_benchmarks_dpm.py
