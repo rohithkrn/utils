@@ -697,6 +697,7 @@ def Benchmark(args, model_map):
         devices=gpus,
         optimize_gradient_memory=False,
         cpu_device=args.cpu,
+        num_threads_per_device=args.num_workers_per_device,
     )
 
     if not args.forward_only:
@@ -757,6 +758,7 @@ def GetArgumentParser():
     parser.add_argument("--num_gpus", type=int, default=1,
                         help="Number of GPU devices (instead of --gpus)")
     parser.add_argument("--net_type", type=str, default="dag")
+    parser.add_argument("--num_workers_per_device", type=int, default=4)
     parser.add_argument("--use-nvtx", default=False, action='store_true')
     parser.add_argument("--htrace_span_log_path", type=str)
     parser.add_argument("--dtype", default='float', choices=['float', 'float16'])

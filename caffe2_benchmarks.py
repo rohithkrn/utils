@@ -27,8 +27,8 @@ def get_benchmark_cmd(args):
 
     benchmark_cmd = "python " + script_path + " --model " + args.model + \
         " --num_gpus " + str(args.num_gpus) + \
-        " --batch_size " + \
-        str(args.batch_size)
+        " --batch_size " + str(args.batch_size) + \
+        " --num_workers_per_device " + str(args.num_workers_per_device)
     log_file = args.model + "_" + str(args.batch_size/args.num_gpus) + \
         "_" + str(args.num_gpus) + 'g'
 
@@ -201,6 +201,7 @@ if __name__ == "__main__":
     parser.add_argument("--layer_wise_benchmark", action='store_true')
     parser.add_argument("--mgpu", action='store_true',
                         help="Set this to run on 1,2,3,4 gpus to analyze scaling.")
+    parser.add_argument("--num_workers_per_device", type=int, default=4)
 
     args = parser.parse_args()
 
