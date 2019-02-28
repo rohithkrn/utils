@@ -143,6 +143,7 @@ def run_mgpu_benchmarks(args):
 
             for num_gpus in range(1,5):
 
+                args.num_gpus = num_gpus
                 args.batch_size = int(model_bs_map[model][0]*num_gpus)
                 benchmark_cmd, log_file = get_benchmark_cmd(args)
                 log_file += ".log"
