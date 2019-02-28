@@ -12,12 +12,12 @@ from collections import OrderedDict
 # Dictionary which maps model and corresponding 'batch_size's
 # to run benchmarks. Comment the models you do not want to run.
 model_bs_map = OrderedDict([
-    ('AlexNet', [64, 256, 1024]),
-    ('VGGA', [32, 64]),
-    ('Inception', [64, 128]),
-    ('Resnet50', [32, 64]),
-    ('Resnet101', [32, 64]),
-    ('Resnext101', [32, 64]),
+    ('AlexNet', [1024]),
+    ('VGGA', [64]),
+    ('Inception', [128]),
+    ('Resnet50', [64]),
+    ('Resnet101', [64]),
+    ('Resnext101', [64]),
 ])
 
 # set this path to convnet_benchmarks_dpm.py
@@ -31,7 +31,8 @@ def get_benchmark_cmd(args):
         " --batch_size " + str(args.batch_size) + \
         " --num_workers_per_device " + str(args.num_workers_per_device)
     log_file = args.model + "_" + str(args.batch_size/args.num_gpus) + \
-        "_" + str(args.num_workers_per_device) + 'w'
+        "_" + str(args.num_workers_per_device) + 'w_' + \
+        str(args.num_gpus) + 'g'
 
     if args.dtype == "float16":
         benchmark_cmd += " --dtype float16"
@@ -135,14 +136,14 @@ def run_mgpu_benchmarks(args):
         results_dict = {}
         args.model = model
 
-        for num_workers in [1, 2, 4, 6, 8]:
+        for num_workers in [1, 4]:
 
             args.num_workers_per_device = num_workers
-            results_with_bs = {}
+            results_with_ng = {}
 
-            for batch_size in model_bs_map[model]:
+            for num_gpus in range(1,5):
 
-                args.batch_size = batch_size
+                args.batch_size = int(model_bs_map[model][0]*num_gpus)
                 benchmark_cmd, log_file = get_benchmark_cmd(args)
                 log_file += ".log"
                 log_file_path = os.path.join(args.logs_dir, "logs")
@@ -161,11 +162,11 @@ def run_mgpu_benchmarks(args):
                                                              args.layer_wise_benchmark)
 
                 if ret_code == 0:
-                    results_with_bs[batch_size] = images_per_sec
+                    results_with_ng[num_gpus] = images_per_sec
                 else:
                     failing_configs.append(benchmark_cmd)
 
-            results_dict[num_workers] = results_with_bs
+            results_dict[num_workers] = results_with_ng
 
         print("##### Results for {} #####".format(model))
         df = pandas.DataFrame(results_dict)
