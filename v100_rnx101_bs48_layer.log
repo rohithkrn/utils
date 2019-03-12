@@ -1,0 +1,1096 @@
+[E init_intrinsics_check.cc:43] CPU feature avx is present on your machine, but the Caffe2 binary is not compiled with it. It means you may not get the full speed of your CPU.
+[E init_intrinsics_check.cc:43] CPU feature avx2 is present on your machine, but the Caffe2 binary is not compiled with it. It means you may not get the full speed of your CPU.
+[E init_intrinsics_check.cc:43] CPU feature fma is present on your machine, but the Caffe2 binary is not compiled with it. It means you may not get the full speed of your CPU.
+INFO:data_parallel_model:Parallelizing model for devices: [0]
+INFO:data_parallel_model:Create input and model training operators
+INFO:data_parallel_model:Model for GPU : 0
+INFO:data_parallel_model:Adding gradient operators
+INFO:data_parallel_model:Add gradient all-reduces for SyncSGD
+INFO:data_parallel_model:Post-iteration operators for updating params
+INFO:data_parallel_model:Calling optimizer builder function
+INFO:data_parallel_model:Add initial parameter sync
+WARNING:memonger:NOTE: Executing memonger to optimize gradient memory
+[I memonger.cc:236] Remapping 210 using 14 shared blobs.
+[I memonger.cc:239] Memonger saved approximately : 3325.88 MB.
+INFO:memonger:Memonger memory optimization took 0.04194045066833496 secs
+Starting benchmark.
+Running warmup runs.
+Main runs.
+Main run finished. Milliseconds per iter: 369.231. Iters per second: 2.70833
+Operator #0 (gpu_0/conv1, Conv) 0.9031 ms/iter (11.329339 GFLOP, 12544.941675 GFLOPS) (154.140672 MB) (0.037632 MB)
+Operator #1 (gpu_0/conv1_spatbn_relu, SpatialBN) 2.0196 ms/iter (0.154141 GFLOP, 76.322315 GFLOPS) (154.140672 MB) (0.000512 MB)
+Operator #2 (gpu_0/conv1_spatbn_relu, Relu) 0.41008 ms/iter (154.140672 MB)
+Operator #3 (gpu_0/pool1, MaxPool) 0.331866 ms/iter
+Operator #4 (gpu_0/comp_0_conv_1, Conv) 0.268878 ms/iter (2.466251 GFLOP, 9172.371629 GFLOPS) (77.070336 MB) (0.032768 MB)
+Operator #5 (gpu_0/comp_0_spatbn_1, SpatialBN) 0.666235 ms/iter (0.077070 GFLOP, 115.680329 GFLOPS) (77.070336 MB) (0.001024 MB)
+Operator #6 (gpu_0/comp_0_spatbn_1, Relu) 0.211376 ms/iter (77.070336 MB)
+Operator #7 (gpu_0/comp_0_conv_2, Conv) 1.10795 ms/iter (1.387266 GFLOP, 1252.102943 GFLOPS) (77.070336 MB) (0.018432 MB)
+Operator #8 (gpu_0/comp_0_spatbn_2, SpatialBN) 0.665793 ms/iter (0.077070 GFLOP, 115.757164 GFLOPS) (77.070336 MB) (0.001024 MB)
+Operator #9 (gpu_0/comp_0_spatbn_2, Relu) 0.211747 ms/iter (77.070336 MB)
+Operator #10 (gpu_0/comp_0_conv_3, Conv) 0.735357 ms/iter (9.865003 GFLOP, 13415.258586 GFLOPS) (154.140672 MB) (0.131072 MB)
+Operator #11 (gpu_0/comp_0_spatbn_3, SpatialBN) 0.930611 ms/iter (0.154141 GFLOP, 165.633849 GFLOPS) (154.140672 MB) (0.002048 MB)
+Operator #12 (gpu_0/shortcut_projection_0, Conv) 0.466197 ms/iter (4.932502 GFLOP, 10580.288665 GFLOPS) (154.140672 MB) (0.065536 MB)
+Operator #13 (gpu_0/shortcut_projection_0_spatbn, SpatialBN) 0.93006 ms/iter (0.154141 GFLOP, 165.731914 GFLOPS) (154.140672 MB) (0.002048 MB)
+Operator #14 (gpu_0/comp_0_sum_3, Sum) 0.580341 ms/iter (0.038535 GFLOP, 66.400938 GFLOPS) (154.140672 MB)
+Operator #15 (gpu_0/comp_0_sum_3, Relu) 0.408234 ms/iter (154.140672 MB)
+Operator #16 (gpu_0/comp_1_conv_1, Conv) 0.729545 ms/iter (9.865003 GFLOP, 13522.126119 GFLOPS) (77.070336 MB) (0.131072 MB)
+Operator #17 (gpu_0/comp_1_spatbn_1, SpatialBN) 0.665768 ms/iter (0.077070 GFLOP, 115.761517 GFLOPS) (77.070336 MB) (0.001024 MB)
+Operator #18 (gpu_0/comp_1_spatbn_1, Relu) 0.210546 ms/iter (77.070336 MB)
+Operator #19 (gpu_0/comp_1_conv_2, Conv) 1.10617 ms/iter (1.387266 GFLOP, 1254.118244 GFLOPS) (77.070336 MB) (0.018432 MB)
+Operator #20 (gpu_0/comp_1_spatbn_2, SpatialBN) 0.664935 ms/iter (0.077070 GFLOP, 115.906519 GFLOPS) (77.070336 MB) (0.001024 MB)
+Operator #21 (gpu_0/comp_1_spatbn_2, Relu) 0.210065 ms/iter (77.070336 MB)
+Operator #22 (gpu_0/comp_1_conv_3, Conv) 0.734066 ms/iter (9.865003 GFLOP, 13438.857878 GFLOPS) (154.140672 MB) (0.131072 MB)
+Operator #23 (gpu_0/comp_1_spatbn_3, SpatialBN) 0.930395 ms/iter (0.154141 GFLOP, 165.672337 GFLOPS) (154.140672 MB) (0.002048 MB)
+Operator #24 (gpu_0/comp_1_sum_3, Sum) 0.578382 ms/iter (0.038535 GFLOP, 66.625795 GFLOPS) (154.140672 MB)
+Operator #25 (gpu_0/comp_1_sum_3, Relu) 0.406371 ms/iter (154.140672 MB)
+Operator #26 (gpu_0/comp_2_conv_1, Conv) 0.73438 ms/iter (9.865003 GFLOP, 13433.111852 GFLOPS) (77.070336 MB) (0.131072 MB)
+Operator #27 (gpu_0/comp_2_spatbn_1, SpatialBN) 0.665625 ms/iter (0.077070 GFLOP, 115.786470 GFLOPS) (77.070336 MB) (0.001024 MB)
+Operator #28 (gpu_0/comp_2_spatbn_1, Relu) 0.211215 ms/iter (77.070336 MB)
+Operator #29 (gpu_0/comp_2_conv_2, Conv) 1.10681 ms/iter (1.387266 GFLOP, 1253.390892 GFLOPS) (77.070336 MB) (0.018432 MB)
+Operator #30 (gpu_0/comp_2_spatbn_2, SpatialBN) 0.664 ms/iter (0.077070 GFLOP, 116.069752 GFLOPS) (77.070336 MB) (0.001024 MB)
+Operator #31 (gpu_0/comp_2_spatbn_2, Relu) 0.210111 ms/iter (77.070336 MB)
+Operator #32 (gpu_0/comp_2_conv_3, Conv) 0.733197 ms/iter (9.865003 GFLOP, 13454.783926 GFLOPS) (154.140672 MB) (0.131072 MB)
+Operator #33 (gpu_0/comp_2_spatbn_3, SpatialBN) 0.929644 ms/iter (0.154141 GFLOP, 165.806092 GFLOPS) (154.140672 MB) (0.002048 MB)
+Operator #34 (gpu_0/comp_2_sum_3, Sum) 0.579366 ms/iter (0.038535 GFLOP, 66.512621 GFLOPS) (154.140672 MB)
+Operator #35 (gpu_0/comp_2_sum_3, Relu) 0.406861 ms/iter (154.140672 MB)
+Operator #36 (gpu_0/comp_3_conv_1, Conv) 1.38124 ms/iter (19.730006 GFLOP, 14284.289546 GFLOPS) (154.140672 MB) (0.262144 MB)
+Operator #37 (gpu_0/comp_3_spatbn_1, SpatialBN) 0.930573 ms/iter (0.154141 GFLOP, 165.640537 GFLOPS) (154.140672 MB) (0.002048 MB)
+Operator #38 (gpu_0/comp_3_spatbn_1, Relu) 0.406267 ms/iter (154.140672 MB)
+Operator #39 (gpu_0/comp_3_conv_2, Conv) 0.659133 ms/iter (1.387266 GFLOP, 2104.682570 GFLOPS) (38.535168 MB) (0.073728 MB)
+Operator #40 (gpu_0/comp_3_spatbn_2, SpatialBN) 0.279611 ms/iter (0.038535 GFLOP, 137.817248 GFLOPS) (38.535168 MB) (0.002048 MB)
+Operator #41 (gpu_0/comp_3_spatbn_2, Relu) 0.113362 ms/iter (38.535168 MB)
+Operator #42 (gpu_0/comp_3_conv_3, Conv) 0.736819 ms/iter (9.865003 GFLOP, 13388.635940 GFLOPS) (77.070336 MB) (0.524288 MB)
+Operator #43 (gpu_0/comp_3_spatbn_3, SpatialBN) 0.425176 ms/iter (0.077070 GFLOP, 181.266982 GFLOPS) (77.070336 MB) (0.004096 MB)
+Operator #44 (gpu_0/shortcut_projection_3, Conv) 0.801646 ms/iter (9.865003 GFLOP, 12305.940977 GFLOPS) (77.070336 MB) (0.524288 MB)
+Operator #45 (gpu_0/shortcut_projection_3_spatbn, SpatialBN) 0.424559 ms/iter (0.077070 GFLOP, 181.530384 GFLOPS) (77.070336 MB) (0.004096 MB)
+Operator #46 (gpu_0/comp_3_sum_3, Sum) 0.298013 ms/iter (0.019268 GFLOP, 64.653497 GFLOPS) (77.070336 MB)
+Operator #47 (gpu_0/comp_3_sum_3, Relu) 0.210711 ms/iter (77.070336 MB)
+Operator #48 (gpu_0/comp_4_conv_1, Conv) 0.810845 ms/iter (9.865003 GFLOP, 12166.324126 GFLOPS) (38.535168 MB) (0.524288 MB)
+Operator #49 (gpu_0/comp_4_spatbn_1, SpatialBN) 0.27948 ms/iter (0.038535 GFLOP, 137.881511 GFLOPS) (38.535168 MB) (0.002048 MB)
+Operator #50 (gpu_0/comp_4_spatbn_1, Relu) 0.11288 ms/iter (38.535168 MB)
+Operator #51 (gpu_0/comp_4_conv_2, Conv) 0.649273 ms/iter (1.387266 GFLOP, 2136.645168 GFLOPS) (38.535168 MB) (0.073728 MB)
+Operator #52 (gpu_0/comp_4_spatbn_2, SpatialBN) 0.280843 ms/iter (0.038535 GFLOP, 137.212390 GFLOPS) (38.535168 MB) (0.002048 MB)
+Operator #53 (gpu_0/comp_4_spatbn_2, Relu) 0.113276 ms/iter (38.535168 MB)
+Operator #54 (gpu_0/comp_4_conv_3, Conv) 0.733921 ms/iter (9.865003 GFLOP, 13441.501741 GFLOPS) (77.070336 MB) (0.524288 MB)
+Operator #55 (gpu_0/comp_4_spatbn_3, SpatialBN) 0.424963 ms/iter (0.077070 GFLOP, 181.357920 GFLOPS) (77.070336 MB) (0.004096 MB)
+Operator #56 (gpu_0/comp_4_sum_3, Sum) 0.297199 ms/iter (0.019268 GFLOP, 64.830605 GFLOPS) (77.070336 MB)
+Operator #57 (gpu_0/comp_4_sum_3, Relu) 0.210698 ms/iter (77.070336 MB)
+Operator #58 (gpu_0/comp_5_conv_1, Conv) 0.817126 ms/iter (9.865003 GFLOP, 12072.799724 GFLOPS) (38.535168 MB) (0.524288 MB)
+Operator #59 (gpu_0/comp_5_spatbn_1, SpatialBN) 0.280396 ms/iter (0.038535 GFLOP, 137.431124 GFLOPS) (38.535168 MB) (0.002048 MB)
+Operator #60 (gpu_0/comp_5_spatbn_1, Relu) 0.113156 ms/iter (38.535168 MB)
+Operator #61 (gpu_0/comp_5_conv_2, Conv) 0.6497 ms/iter (1.387266 GFLOP, 2135.242137 GFLOPS) (38.535168 MB) (0.073728 MB)
+Operator #62 (gpu_0/comp_5_spatbn_2, SpatialBN) 0.280558 ms/iter (0.038535 GFLOP, 137.351730 GFLOPS) (38.535168 MB) (0.002048 MB)
+Operator #63 (gpu_0/comp_5_spatbn_2, Relu) 0.112902 ms/iter (38.535168 MB)
+Operator #64 (gpu_0/comp_5_conv_3, Conv) 0.737165 ms/iter (9.865003 GFLOP, 13382.359691 GFLOPS) (77.070336 MB) (0.524288 MB)
+Operator #65 (gpu_0/comp_5_spatbn_3, SpatialBN) 0.424552 ms/iter (0.077070 GFLOP, 181.533197 GFLOPS) (77.070336 MB) (0.004096 MB)
+Operator #66 (gpu_0/comp_5_sum_3, Sum) 0.296441 ms/iter (0.019268 GFLOP, 64.996268 GFLOPS) (77.070336 MB)
+Operator #67 (gpu_0/comp_5_sum_3, Relu) 0.210543 ms/iter (77.070336 MB)
+Operator #68 (gpu_0/comp_6_conv_1, Conv) 0.815938 ms/iter (9.865003 GFLOP, 12090.378924 GFLOPS) (38.535168 MB) (0.524288 MB)
+Operator #69 (gpu_0/comp_6_spatbn_1, SpatialBN) 0.279905 ms/iter (0.038535 GFLOP, 137.672071 GFLOPS) (38.535168 MB) (0.002048 MB)
+Operator #70 (gpu_0/comp_6_spatbn_1, Relu) 0.112874 ms/iter (38.535168 MB)
+Operator #71 (gpu_0/comp_6_conv_2, Conv) 0.6494 ms/iter (1.387266 GFLOP, 2136.227531 GFLOPS) (38.535168 MB) (0.073728 MB)
+Operator #72 (gpu_0/comp_6_spatbn_2, SpatialBN) 0.28107 ms/iter (0.038535 GFLOP, 137.101679 GFLOPS) (38.535168 MB) (0.002048 MB)
+Operator #73 (gpu_0/comp_6_spatbn_2, Relu) 0.112968 ms/iter (38.535168 MB)
+Operator #74 (gpu_0/comp_6_conv_3, Conv) 0.734421 ms/iter (9.865003 GFLOP, 13432.352191 GFLOPS) (77.070336 MB) (0.524288 MB)
+Operator #75 (gpu_0/comp_6_spatbn_3, SpatialBN) 0.42396 ms/iter (0.077070 GFLOP, 181.786680 GFLOPS) (77.070336 MB) (0.004096 MB)
+Operator #76 (gpu_0/comp_6_sum_3, Sum) 0.296141 ms/iter (0.019268 GFLOP, 65.062159 GFLOPS) (77.070336 MB)
+Operator #77 (gpu_0/comp_6_sum_3, Relu) 0.210334 ms/iter (77.070336 MB)
+Operator #78 (gpu_0/comp_7_conv_1, Conv) 1.44987 ms/iter (19.730006 GFLOP, 13608.148354 GFLOPS) (77.070336 MB) (1.048576 MB)
+Operator #79 (gpu_0/comp_7_spatbn_1, SpatialBN) 0.425438 ms/iter (0.077070 GFLOP, 181.155484 GFLOPS) (77.070336 MB) (0.004096 MB)
+Operator #80 (gpu_0/comp_7_spatbn_1, Relu) 0.210396 ms/iter (77.070336 MB)
+Operator #81 (gpu_0/comp_7_conv_2, Conv) 0.404281 ms/iter (1.387266 GFLOP, 3431.438544 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #82 (gpu_0/comp_7_spatbn_2, SpatialBN) 0.138834 ms/iter (0.019268 GFLOP, 138.781154 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #83 (gpu_0/comp_7_spatbn_2, Relu) 0.0648977 ms/iter (19.267584 MB)
+Operator #84 (gpu_0/comp_7_conv_3, Conv) 0.794528 ms/iter (9.865003 GFLOP, 12416.177336 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #85 (gpu_0/comp_7_spatbn_3, SpatialBN) 0.223276 ms/iter (0.038535 GFLOP, 172.589765 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #86 (gpu_0/shortcut_projection_7, Conv) 0.785681 ms/iter (9.865003 GFLOP, 12555.989381 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #87 (gpu_0/shortcut_projection_7_spatbn, SpatialBN) 0.222498 ms/iter (0.038535 GFLOP, 173.193630 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #88 (gpu_0/comp_7_sum_3, Sum) 0.156388 ms/iter (0.009634 GFLOP, 61.601976 GFLOPS) (38.535168 MB)
+Operator #89 (gpu_0/comp_7_sum_3, Relu) 0.11287 ms/iter (38.535168 MB)
+Operator #90 (gpu_0/comp_8_conv_1, Conv) 0.755969 ms/iter (9.865003 GFLOP, 13049.487463 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #91 (gpu_0/comp_8_spatbn_1, SpatialBN) 0.138216 ms/iter (0.019268 GFLOP, 139.401576 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #92 (gpu_0/comp_8_spatbn_1, Relu) 0.0645205 ms/iter (19.267584 MB)
+Operator #93 (gpu_0/comp_8_conv_2, Conv) 0.401839 ms/iter (1.387266 GFLOP, 3452.288952 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #94 (gpu_0/comp_8_spatbn_2, SpatialBN) 0.13976 ms/iter (0.019268 GFLOP, 137.862141 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #95 (gpu_0/comp_8_spatbn_2, Relu) 0.064677 ms/iter (19.267584 MB)
+Operator #96 (gpu_0/comp_8_conv_3, Conv) 0.790743 ms/iter (9.865003 GFLOP, 12475.618687 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #97 (gpu_0/comp_8_spatbn_3, SpatialBN) 0.223778 ms/iter (0.038535 GFLOP, 172.202750 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #98 (gpu_0/comp_8_sum_3, Sum) 0.155917 ms/iter (0.009634 GFLOP, 61.788107 GFLOPS) (38.535168 MB)
+Operator #99 (gpu_0/comp_8_sum_3, Relu) 0.112885 ms/iter (38.535168 MB)
+Operator #100 (gpu_0/comp_9_conv_1, Conv) 0.757251 ms/iter (9.865003 GFLOP, 13027.383212 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #101 (gpu_0/comp_9_spatbn_1, SpatialBN) 0.139486 ms/iter (0.019268 GFLOP, 138.132647 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #102 (gpu_0/comp_9_spatbn_1, Relu) 0.064011 ms/iter (19.267584 MB)
+Operator #103 (gpu_0/comp_9_conv_2, Conv) 0.393138 ms/iter (1.387266 GFLOP, 3528.697156 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #104 (gpu_0/comp_9_spatbn_2, SpatialBN) 0.139248 ms/iter (0.019268 GFLOP, 138.368837 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #105 (gpu_0/comp_9_spatbn_2, Relu) 0.0649679 ms/iter (19.267584 MB)
+Operator #106 (gpu_0/comp_9_conv_3, Conv) 0.788946 ms/iter (9.865003 GFLOP, 12504.025009 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #107 (gpu_0/comp_9_spatbn_3, SpatialBN) 0.223267 ms/iter (0.038535 GFLOP, 172.596639 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #108 (gpu_0/comp_9_sum_3, Sum) 0.156324 ms/iter (0.009634 GFLOP, 61.627202 GFLOPS) (38.535168 MB)
+Operator #109 (gpu_0/comp_9_sum_3, Relu) 0.113285 ms/iter (38.535168 MB)
+Operator #110 (gpu_0/comp_10_conv_1, Conv) 0.756725 ms/iter (9.865003 GFLOP, 13036.437713 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #111 (gpu_0/comp_10_spatbn_1, SpatialBN) 0.138564 ms/iter (0.019268 GFLOP, 139.052279 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #112 (gpu_0/comp_10_spatbn_1, Relu) 0.0639938 ms/iter (19.267584 MB)
+Operator #113 (gpu_0/comp_10_conv_2, Conv) 0.389657 ms/iter (1.387266 GFLOP, 3560.226464 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #114 (gpu_0/comp_10_spatbn_2, SpatialBN) 0.138907 ms/iter (0.019268 GFLOP, 138.708228 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #115 (gpu_0/comp_10_spatbn_2, Relu) 0.0645207 ms/iter (19.267584 MB)
+Operator #116 (gpu_0/comp_10_conv_3, Conv) 0.78906 ms/iter (9.865003 GFLOP, 12502.216784 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #117 (gpu_0/comp_10_spatbn_3, SpatialBN) 0.222854 ms/iter (0.038535 GFLOP, 172.916640 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #118 (gpu_0/comp_10_sum_3, Sum) 0.155446 ms/iter (0.009634 GFLOP, 61.975047 GFLOPS) (38.535168 MB)
+Operator #119 (gpu_0/comp_10_sum_3, Relu) 0.112801 ms/iter (38.535168 MB)
+Operator #120 (gpu_0/comp_11_conv_1, Conv) 0.755848 ms/iter (9.865003 GFLOP, 13051.578506 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #121 (gpu_0/comp_11_spatbn_1, SpatialBN) 0.138978 ms/iter (0.019268 GFLOP, 138.637448 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #122 (gpu_0/comp_11_spatbn_1, Relu) 0.0638643 ms/iter (19.267584 MB)
+Operator #123 (gpu_0/comp_11_conv_2, Conv) 0.390282 ms/iter (1.387266 GFLOP, 3554.522354 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #124 (gpu_0/comp_11_spatbn_2, SpatialBN) 0.138808 ms/iter (0.019268 GFLOP, 138.807744 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #125 (gpu_0/comp_11_spatbn_2, Relu) 0.0643689 ms/iter (19.267584 MB)
+Operator #126 (gpu_0/comp_11_conv_3, Conv) 0.788478 ms/iter (9.865003 GFLOP, 12511.447758 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #127 (gpu_0/comp_11_spatbn_3, SpatialBN) 0.223027 ms/iter (0.038535 GFLOP, 172.782771 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #128 (gpu_0/comp_11_sum_3, Sum) 0.156142 ms/iter (0.009634 GFLOP, 61.699030 GFLOPS) (38.535168 MB)
+Operator #129 (gpu_0/comp_11_sum_3, Relu) 0.112989 ms/iter (38.535168 MB)
+Operator #130 (gpu_0/comp_12_conv_1, Conv) 0.75648 ms/iter (9.865003 GFLOP, 13040.663893 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #131 (gpu_0/comp_12_spatbn_1, SpatialBN) 0.139328 ms/iter (0.019268 GFLOP, 138.289788 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #132 (gpu_0/comp_12_spatbn_1, Relu) 0.064173 ms/iter (19.267584 MB)
+Operator #133 (gpu_0/comp_12_conv_2, Conv) 0.391907 ms/iter (1.387266 GFLOP, 3539.779915 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #134 (gpu_0/comp_12_spatbn_2, SpatialBN) 0.13896 ms/iter (0.019268 GFLOP, 138.655704 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #135 (gpu_0/comp_12_spatbn_2, Relu) 0.0659934 ms/iter (19.267584 MB)
+Operator #136 (gpu_0/comp_12_conv_3, Conv) 0.788871 ms/iter (9.865003 GFLOP, 12505.221460 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #137 (gpu_0/comp_12_spatbn_3, SpatialBN) 0.222522 ms/iter (0.038535 GFLOP, 173.174720 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #138 (gpu_0/comp_12_sum_3, Sum) 0.156029 ms/iter (0.009634 GFLOP, 61.743604 GFLOPS) (38.535168 MB)
+Operator #139 (gpu_0/comp_12_sum_3, Relu) 0.112904 ms/iter (38.535168 MB)
+Operator #140 (gpu_0/comp_13_conv_1, Conv) 0.754771 ms/iter (9.865003 GFLOP, 13070.187807 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #141 (gpu_0/comp_13_spatbn_1, SpatialBN) 0.138813 ms/iter (0.019268 GFLOP, 138.802654 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #142 (gpu_0/comp_13_spatbn_1, Relu) 0.0639023 ms/iter (19.267584 MB)
+Operator #143 (gpu_0/comp_13_conv_2, Conv) 0.388834 ms/iter (1.387266 GFLOP, 3567.758244 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #144 (gpu_0/comp_13_spatbn_2, SpatialBN) 0.139445 ms/iter (0.019268 GFLOP, 138.173553 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #145 (gpu_0/comp_13_spatbn_2, Relu) 0.0661359 ms/iter (19.267584 MB)
+Operator #146 (gpu_0/comp_13_conv_3, Conv) 0.788815 ms/iter (9.865003 GFLOP, 12506.104396 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #147 (gpu_0/comp_13_spatbn_3, SpatialBN) 0.222973 ms/iter (0.038535 GFLOP, 172.824451 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #148 (gpu_0/comp_13_sum_3, Sum) 0.156551 ms/iter (0.009634 GFLOP, 61.537604 GFLOPS) (38.535168 MB)
+Operator #149 (gpu_0/comp_13_sum_3, Relu) 0.113685 ms/iter (38.535168 MB)
+Operator #150 (gpu_0/comp_14_conv_1, Conv) 0.755829 ms/iter (9.865003 GFLOP, 13051.898808 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #151 (gpu_0/comp_14_spatbn_1, SpatialBN) 0.138855 ms/iter (0.019268 GFLOP, 138.760267 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #152 (gpu_0/comp_14_spatbn_1, Relu) 0.0640655 ms/iter (19.267584 MB)
+Operator #153 (gpu_0/comp_14_conv_2, Conv) 0.39018 ms/iter (1.387266 GFLOP, 3555.449573 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #154 (gpu_0/comp_14_spatbn_2, SpatialBN) 0.139511 ms/iter (0.019268 GFLOP, 138.107990 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #155 (gpu_0/comp_14_spatbn_2, Relu) 0.0645629 ms/iter (19.267584 MB)
+Operator #156 (gpu_0/comp_14_conv_3, Conv) 0.788741 ms/iter (9.865003 GFLOP, 12507.283854 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #157 (gpu_0/comp_14_spatbn_3, SpatialBN) 0.223073 ms/iter (0.038535 GFLOP, 172.746576 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #158 (gpu_0/comp_14_sum_3, Sum) 0.155877 ms/iter (0.009634 GFLOP, 61.803729 GFLOPS) (38.535168 MB)
+Operator #159 (gpu_0/comp_14_sum_3, Relu) 0.112786 ms/iter (38.535168 MB)
+Operator #160 (gpu_0/comp_15_conv_1, Conv) 0.754879 ms/iter (9.865003 GFLOP, 13068.321105 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #161 (gpu_0/comp_15_spatbn_1, SpatialBN) 0.138683 ms/iter (0.019268 GFLOP, 138.932466 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #162 (gpu_0/comp_15_spatbn_1, Relu) 0.0641071 ms/iter (19.267584 MB)
+Operator #163 (gpu_0/comp_15_conv_2, Conv) 0.391625 ms/iter (1.387266 GFLOP, 3542.335523 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #164 (gpu_0/comp_15_spatbn_2, SpatialBN) 0.138866 ms/iter (0.019268 GFLOP, 138.749785 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #165 (gpu_0/comp_15_spatbn_2, Relu) 0.0643423 ms/iter (19.267584 MB)
+Operator #166 (gpu_0/comp_15_conv_3, Conv) 0.79 ms/iter (9.865003 GFLOP, 12487.340907 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #167 (gpu_0/comp_15_spatbn_3, SpatialBN) 0.222999 ms/iter (0.038535 GFLOP, 172.804459 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #168 (gpu_0/comp_15_sum_3, Sum) 0.156026 ms/iter (0.009634 GFLOP, 61.744746 GFLOPS) (38.535168 MB)
+Operator #169 (gpu_0/comp_15_sum_3, Relu) 0.113001 ms/iter (38.535168 MB)
+Operator #170 (gpu_0/comp_16_conv_1, Conv) 0.759322 ms/iter (9.865003 GFLOP, 12991.865794 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #171 (gpu_0/comp_16_spatbn_1, SpatialBN) 0.138763 ms/iter (0.019268 GFLOP, 138.852939 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #172 (gpu_0/comp_16_spatbn_1, Relu) 0.0645928 ms/iter (19.267584 MB)
+Operator #173 (gpu_0/comp_16_conv_2, Conv) 0.394106 ms/iter (1.387266 GFLOP, 3520.029337 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #174 (gpu_0/comp_16_spatbn_2, SpatialBN) 0.14008 ms/iter (0.019268 GFLOP, 137.547284 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #175 (gpu_0/comp_16_spatbn_2, Relu) 0.0646821 ms/iter (19.267584 MB)
+Operator #176 (gpu_0/comp_16_conv_3, Conv) 0.788891 ms/iter (9.865003 GFLOP, 12504.907020 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #177 (gpu_0/comp_16_spatbn_3, SpatialBN) 0.223139 ms/iter (0.038535 GFLOP, 172.696039 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #178 (gpu_0/comp_16_sum_3, Sum) 0.156244 ms/iter (0.009634 GFLOP, 61.658517 GFLOPS) (38.535168 MB)
+Operator #179 (gpu_0/comp_16_sum_3, Relu) 0.112757 ms/iter (38.535168 MB)
+Operator #180 (gpu_0/comp_17_conv_1, Conv) 0.756178 ms/iter (9.865003 GFLOP, 13045.882398 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #181 (gpu_0/comp_17_spatbn_1, SpatialBN) 0.139283 ms/iter (0.019268 GFLOP, 138.333865 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #182 (gpu_0/comp_17_spatbn_1, Relu) 0.0641678 ms/iter (19.267584 MB)
+Operator #183 (gpu_0/comp_17_conv_2, Conv) 0.39021 ms/iter (1.387266 GFLOP, 3555.178677 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #184 (gpu_0/comp_17_spatbn_2, SpatialBN) 0.139606 ms/iter (0.019268 GFLOP, 138.013918 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #185 (gpu_0/comp_17_spatbn_2, Relu) 0.0646229 ms/iter (19.267584 MB)
+Operator #186 (gpu_0/comp_17_conv_3, Conv) 0.788781 ms/iter (9.865003 GFLOP, 12506.638149 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #187 (gpu_0/comp_17_spatbn_3, SpatialBN) 0.222801 ms/iter (0.038535 GFLOP, 172.957940 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #188 (gpu_0/comp_17_sum_3, Sum) 0.156332 ms/iter (0.009634 GFLOP, 61.623889 GFLOPS) (38.535168 MB)
+Operator #189 (gpu_0/comp_17_sum_3, Relu) 0.113108 ms/iter (38.535168 MB)
+Operator #190 (gpu_0/comp_18_conv_1, Conv) 0.75604 ms/iter (9.865003 GFLOP, 13048.255378 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #191 (gpu_0/comp_18_spatbn_1, SpatialBN) 0.1391 ms/iter (0.019268 GFLOP, 138.515855 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #192 (gpu_0/comp_18_spatbn_1, Relu) 0.0640899 ms/iter (19.267584 MB)
+Operator #193 (gpu_0/comp_18_conv_2, Conv) 0.394506 ms/iter (1.387266 GFLOP, 3516.462249 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #194 (gpu_0/comp_18_spatbn_2, SpatialBN) 0.139411 ms/iter (0.019268 GFLOP, 138.207545 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #195 (gpu_0/comp_18_spatbn_2, Relu) 0.0647488 ms/iter (19.267584 MB)
+Operator #196 (gpu_0/comp_18_conv_3, Conv) 0.789626 ms/iter (9.865003 GFLOP, 12493.256679 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #197 (gpu_0/comp_18_spatbn_3, SpatialBN) 0.223384 ms/iter (0.038535 GFLOP, 172.506228 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #198 (gpu_0/comp_18_sum_3, Sum) 0.156008 ms/iter (0.009634 GFLOP, 61.752031 GFLOPS) (38.535168 MB)
+Operator #199 (gpu_0/comp_18_sum_3, Relu) 0.113188 ms/iter (38.535168 MB)
+Operator #200 (gpu_0/comp_19_conv_1, Conv) 0.755322 ms/iter (9.865003 GFLOP, 13060.655140 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #201 (gpu_0/comp_19_spatbn_1, SpatialBN) 0.139674 ms/iter (0.019268 GFLOP, 137.947023 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #202 (gpu_0/comp_19_spatbn_1, Relu) 0.06513 ms/iter (19.267584 MB)
+Operator #203 (gpu_0/comp_19_conv_2, Conv) 0.389185 ms/iter (1.387266 GFLOP, 3564.541413 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #204 (gpu_0/comp_19_spatbn_2, SpatialBN) 0.139569 ms/iter (0.019268 GFLOP, 138.050402 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #205 (gpu_0/comp_19_spatbn_2, Relu) 0.065124 ms/iter (19.267584 MB)
+Operator #206 (gpu_0/comp_19_conv_3, Conv) 0.790051 ms/iter (9.865003 GFLOP, 12486.532212 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #207 (gpu_0/comp_19_spatbn_3, SpatialBN) 0.223174 ms/iter (0.038535 GFLOP, 172.668790 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #208 (gpu_0/comp_19_sum_3, Sum) 0.156037 ms/iter (0.009634 GFLOP, 61.740241 GFLOPS) (38.535168 MB)
+Operator #209 (gpu_0/comp_19_sum_3, Relu) 0.113582 ms/iter (38.535168 MB)
+Operator #210 (gpu_0/comp_20_conv_1, Conv) 0.755268 ms/iter (9.865003 GFLOP, 13061.600936 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #211 (gpu_0/comp_20_spatbn_1, SpatialBN) 0.139227 ms/iter (0.019268 GFLOP, 138.390008 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #212 (gpu_0/comp_20_spatbn_1, Relu) 0.0642848 ms/iter (19.267584 MB)
+Operator #213 (gpu_0/comp_20_conv_2, Conv) 0.392986 ms/iter (1.387266 GFLOP, 3530.067701 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #214 (gpu_0/comp_20_spatbn_2, SpatialBN) 0.140689 ms/iter (0.019268 GFLOP, 136.951704 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #215 (gpu_0/comp_20_spatbn_2, Relu) 0.0655067 ms/iter (19.267584 MB)
+Operator #216 (gpu_0/comp_20_conv_3, Conv) 0.790901 ms/iter (9.865003 GFLOP, 12473.123021 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #217 (gpu_0/comp_20_spatbn_3, SpatialBN) 0.223136 ms/iter (0.038535 GFLOP, 172.698438 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #218 (gpu_0/comp_20_sum_3, Sum) 0.155682 ms/iter (0.009634 GFLOP, 61.881100 GFLOPS) (38.535168 MB)
+Operator #219 (gpu_0/comp_20_sum_3, Relu) 0.113316 ms/iter (38.535168 MB)
+Operator #220 (gpu_0/comp_21_conv_1, Conv) 0.755944 ms/iter (9.865003 GFLOP, 13049.916319 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #221 (gpu_0/comp_21_spatbn_1, SpatialBN) 0.139018 ms/iter (0.019268 GFLOP, 138.597468 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #222 (gpu_0/comp_21_spatbn_1, Relu) 0.0642133 ms/iter (19.267584 MB)
+Operator #223 (gpu_0/comp_21_conv_2, Conv) 0.386745 ms/iter (1.387266 GFLOP, 3587.032108 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #224 (gpu_0/comp_21_spatbn_2, SpatialBN) 0.139398 ms/iter (0.019268 GFLOP, 138.220440 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #225 (gpu_0/comp_21_spatbn_2, Relu) 0.0642485 ms/iter (19.267584 MB)
+Operator #226 (gpu_0/comp_21_conv_3, Conv) 0.788736 ms/iter (9.865003 GFLOP, 12507.354175 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #227 (gpu_0/comp_21_spatbn_3, SpatialBN) 0.222826 ms/iter (0.038535 GFLOP, 172.938065 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #228 (gpu_0/comp_21_sum_3, Sum) 0.155891 ms/iter (0.009634 GFLOP, 61.798369 GFLOPS) (38.535168 MB)
+Operator #229 (gpu_0/comp_21_sum_3, Relu) 0.113034 ms/iter (38.535168 MB)
+Operator #230 (gpu_0/comp_22_conv_1, Conv) 0.755915 ms/iter (9.865003 GFLOP, 13050.418471 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #231 (gpu_0/comp_22_spatbn_1, SpatialBN) 0.138721 ms/iter (0.019268 GFLOP, 138.894798 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #232 (gpu_0/comp_22_spatbn_1, Relu) 0.0644319 ms/iter (19.267584 MB)
+Operator #233 (gpu_0/comp_22_conv_2, Conv) 0.39222 ms/iter (1.387266 GFLOP, 3536.954489 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #234 (gpu_0/comp_22_spatbn_2, SpatialBN) 0.139299 ms/iter (0.019268 GFLOP, 138.317682 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #235 (gpu_0/comp_22_spatbn_2, Relu) 0.0644605 ms/iter (19.267584 MB)
+Operator #236 (gpu_0/comp_22_conv_3, Conv) 0.78997 ms/iter (9.865003 GFLOP, 12487.817279 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #237 (gpu_0/comp_22_spatbn_3, SpatialBN) 0.223186 ms/iter (0.038535 GFLOP, 172.659733 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #238 (gpu_0/comp_22_sum_3, Sum) 0.156126 ms/iter (0.009634 GFLOP, 61.705432 GFLOPS) (38.535168 MB)
+Operator #239 (gpu_0/comp_22_sum_3, Relu) 0.112582 ms/iter (38.535168 MB)
+Operator #240 (gpu_0/comp_23_conv_1, Conv) 0.756068 ms/iter (9.865003 GFLOP, 13047.772320 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #241 (gpu_0/comp_23_spatbn_1, SpatialBN) 0.138939 ms/iter (0.019268 GFLOP, 138.676178 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #242 (gpu_0/comp_23_spatbn_1, Relu) 0.0658645 ms/iter (19.267584 MB)
+Operator #243 (gpu_0/comp_23_conv_2, Conv) 0.392069 ms/iter (1.387266 GFLOP, 3538.323711 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #244 (gpu_0/comp_23_spatbn_2, SpatialBN) 0.139573 ms/iter (0.019268 GFLOP, 138.046534 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #245 (gpu_0/comp_23_spatbn_2, Relu) 0.0645411 ms/iter (19.267584 MB)
+Operator #246 (gpu_0/comp_23_conv_3, Conv) 0.790645 ms/iter (9.865003 GFLOP, 12477.160361 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #247 (gpu_0/comp_23_spatbn_3, SpatialBN) 0.222641 ms/iter (0.038535 GFLOP, 173.081775 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #248 (gpu_0/comp_23_sum_3, Sum) 0.156449 ms/iter (0.009634 GFLOP, 61.577728 GFLOPS) (38.535168 MB)
+Operator #249 (gpu_0/comp_23_sum_3, Relu) 0.112683 ms/iter (38.535168 MB)
+Operator #250 (gpu_0/comp_24_conv_1, Conv) 0.755058 ms/iter (9.865003 GFLOP, 13065.230371 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #251 (gpu_0/comp_24_spatbn_1, SpatialBN) 0.13867 ms/iter (0.019268 GFLOP, 138.945580 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #252 (gpu_0/comp_24_spatbn_1, Relu) 0.0645076 ms/iter (19.267584 MB)
+Operator #253 (gpu_0/comp_24_conv_2, Conv) 0.389751 ms/iter (1.387266 GFLOP, 3559.363159 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #254 (gpu_0/comp_24_spatbn_2, SpatialBN) 0.139838 ms/iter (0.019268 GFLOP, 137.784551 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #255 (gpu_0/comp_24_spatbn_2, Relu) 0.0643213 ms/iter (19.267584 MB)
+Operator #256 (gpu_0/comp_24_conv_3, Conv) 0.792615 ms/iter (9.865003 GFLOP, 12446.154988 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #257 (gpu_0/comp_24_spatbn_3, SpatialBN) 0.224236 ms/iter (0.038535 GFLOP, 171.850623 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #258 (gpu_0/comp_24_sum_3, Sum) 0.155908 ms/iter (0.009634 GFLOP, 61.791438 GFLOPS) (38.535168 MB)
+Operator #259 (gpu_0/comp_24_sum_3, Relu) 0.112962 ms/iter (38.535168 MB)
+Operator #260 (gpu_0/comp_25_conv_1, Conv) 0.756393 ms/iter (9.865003 GFLOP, 13042.158462 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #261 (gpu_0/comp_25_spatbn_1, SpatialBN) 0.138611 ms/iter (0.019268 GFLOP, 139.004527 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #262 (gpu_0/comp_25_spatbn_1, Relu) 0.0641642 ms/iter (19.267584 MB)
+Operator #263 (gpu_0/comp_25_conv_2, Conv) 0.387861 ms/iter (1.387266 GFLOP, 3576.712920 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #264 (gpu_0/comp_25_spatbn_2, SpatialBN) 0.139687 ms/iter (0.019268 GFLOP, 137.934274 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #265 (gpu_0/comp_25_spatbn_2, Relu) 0.0644198 ms/iter (19.267584 MB)
+Operator #266 (gpu_0/comp_25_conv_3, Conv) 0.791357 ms/iter (9.865003 GFLOP, 12465.928938 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #267 (gpu_0/comp_25_spatbn_3, SpatialBN) 0.22371 ms/iter (0.038535 GFLOP, 172.254852 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #268 (gpu_0/comp_25_sum_3, Sum) 0.156273 ms/iter (0.009634 GFLOP, 61.647111 GFLOPS) (38.535168 MB)
+Operator #269 (gpu_0/comp_25_sum_3, Relu) 0.112611 ms/iter (38.535168 MB)
+Operator #270 (gpu_0/comp_26_conv_1, Conv) 0.755088 ms/iter (9.865003 GFLOP, 13064.700678 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #271 (gpu_0/comp_26_spatbn_1, SpatialBN) 0.139333 ms/iter (0.019268 GFLOP, 138.283944 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #272 (gpu_0/comp_26_spatbn_1, Relu) 0.0648076 ms/iter (19.267584 MB)
+Operator #273 (gpu_0/comp_26_conv_2, Conv) 0.388825 ms/iter (1.387266 GFLOP, 3567.843563 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #274 (gpu_0/comp_26_spatbn_2, SpatialBN) 0.139304 ms/iter (0.019268 GFLOP, 138.313208 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #275 (gpu_0/comp_26_spatbn_2, Relu) 0.0643014 ms/iter (19.267584 MB)
+Operator #276 (gpu_0/comp_26_conv_3, Conv) 0.788778 ms/iter (9.865003 GFLOP, 12506.683512 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #277 (gpu_0/comp_26_spatbn_3, SpatialBN) 0.224178 ms/iter (0.038535 GFLOP, 171.895785 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #278 (gpu_0/comp_26_sum_3, Sum) 0.155968 ms/iter (0.009634 GFLOP, 61.767908 GFLOPS) (38.535168 MB)
+Operator #279 (gpu_0/comp_26_sum_3, Relu) 0.113255 ms/iter (38.535168 MB)
+Operator #280 (gpu_0/comp_27_conv_1, Conv) 0.755255 ms/iter (9.865003 GFLOP, 13061.821944 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #281 (gpu_0/comp_27_spatbn_1, SpatialBN) 0.138775 ms/iter (0.019268 GFLOP, 138.840356 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #282 (gpu_0/comp_27_spatbn_1, Relu) 0.0642452 ms/iter (19.267584 MB)
+Operator #283 (gpu_0/comp_27_conv_2, Conv) 0.393013 ms/iter (1.387266 GFLOP, 3529.819289 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #284 (gpu_0/comp_27_spatbn_2, SpatialBN) 0.139585 ms/iter (0.019268 GFLOP, 138.034768 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #285 (gpu_0/comp_27_spatbn_2, Relu) 0.0650907 ms/iter (19.267584 MB)
+Operator #286 (gpu_0/comp_27_conv_3, Conv) 0.78905 ms/iter (9.865003 GFLOP, 12502.376956 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #287 (gpu_0/comp_27_spatbn_3, SpatialBN) 0.22351 ms/iter (0.038535 GFLOP, 172.408830 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #288 (gpu_0/comp_27_sum_3, Sum) 0.15584 ms/iter (0.009634 GFLOP, 61.818522 GFLOPS) (38.535168 MB)
+Operator #289 (gpu_0/comp_27_sum_3, Relu) 0.113218 ms/iter (38.535168 MB)
+Operator #290 (gpu_0/comp_28_conv_1, Conv) 0.755725 ms/iter (9.865003 GFLOP, 13053.700695 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #291 (gpu_0/comp_28_spatbn_1, SpatialBN) 0.139412 ms/iter (0.019268 GFLOP, 138.206363 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #292 (gpu_0/comp_28_spatbn_1, Relu) 0.0640132 ms/iter (19.267584 MB)
+Operator #293 (gpu_0/comp_28_conv_2, Conv) 0.388634 ms/iter (1.387266 GFLOP, 3569.590876 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #294 (gpu_0/comp_28_spatbn_2, SpatialBN) 0.139187 ms/iter (0.019268 GFLOP, 138.429881 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #295 (gpu_0/comp_28_spatbn_2, Relu) 0.0645118 ms/iter (19.267584 MB)
+Operator #296 (gpu_0/comp_28_conv_3, Conv) 0.790918 ms/iter (9.865003 GFLOP, 12472.859823 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #297 (gpu_0/comp_28_spatbn_3, SpatialBN) 0.223462 ms/iter (0.038535 GFLOP, 172.446337 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #298 (gpu_0/comp_28_sum_3, Sum) 0.15605 ms/iter (0.009634 GFLOP, 61.735289 GFLOPS) (38.535168 MB)
+Operator #299 (gpu_0/comp_28_sum_3, Relu) 0.11322 ms/iter (38.535168 MB)
+Operator #300 (gpu_0/comp_29_conv_1, Conv) 0.755533 ms/iter (9.865003 GFLOP, 13057.017533 GFLOPS) (19.267584 MB) (2.097152 MB)
+Operator #301 (gpu_0/comp_29_spatbn_1, SpatialBN) 0.138978 ms/iter (0.019268 GFLOP, 138.637960 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #302 (gpu_0/comp_29_spatbn_1, Relu) 0.064345 ms/iter (19.267584 MB)
+Operator #303 (gpu_0/comp_29_conv_2, Conv) 0.391257 ms/iter (1.387266 GFLOP, 3545.660809 GFLOPS) (19.267584 MB) (0.294912 MB)
+Operator #304 (gpu_0/comp_29_spatbn_2, SpatialBN) 0.13941 ms/iter (0.019268 GFLOP, 138.207947 GFLOPS) (19.267584 MB) (0.004096 MB)
+Operator #305 (gpu_0/comp_29_spatbn_2, Relu) 0.0645055 ms/iter (19.267584 MB)
+Operator #306 (gpu_0/comp_29_conv_3, Conv) 0.789795 ms/iter (9.865003 GFLOP, 12490.591060 GFLOPS) (38.535168 MB) (2.097152 MB)
+Operator #307 (gpu_0/comp_29_spatbn_3, SpatialBN) 0.222827 ms/iter (0.038535 GFLOP, 172.937380 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #308 (gpu_0/comp_29_sum_3, Sum) 0.156248 ms/iter (0.009634 GFLOP, 61.657134 GFLOPS) (38.535168 MB)
+Operator #309 (gpu_0/comp_29_sum_3, Relu) 0.113063 ms/iter (38.535168 MB)
+Operator #310 (gpu_0/comp_30_conv_1, Conv) 1.53534 ms/iter (19.730006 GFLOP, 12850.564768 GFLOPS) (38.535168 MB) (4.194304 MB)
+Operator #311 (gpu_0/comp_30_spatbn_1, SpatialBN) 0.227641 ms/iter (0.038535 GFLOP, 169.280518 GFLOPS) (38.535168 MB) (0.008192 MB)
+Operator #312 (gpu_0/comp_30_spatbn_1, Relu) 0.113188 ms/iter (38.535168 MB)
+Operator #313 (gpu_0/comp_30_conv_2, Conv) 0.395997 ms/iter (1.387266 GFLOP, 3503.224476 GFLOPS) (9.633792 MB) (1.179648 MB)
+Operator #314 (gpu_0/comp_30_spatbn_2, SpatialBN) 0.110414 ms/iter (0.009634 GFLOP, 87.251465 GFLOPS) (9.633792 MB) (0.008192 MB)
+Operator #315 (gpu_0/comp_30_spatbn_2, Relu) 0.0397735 ms/iter (9.633792 MB)
+Operator #316 (gpu_0/comp_30_conv_3, Conv) 0.921737 ms/iter (9.865003 GFLOP, 10702.618980 GFLOPS) (19.267584 MB) (8.388608 MB)
+Operator #317 (gpu_0/comp_30_spatbn_3, SpatialBN) 0.19818 ms/iter (0.019268 GFLOP, 97.222549 GFLOPS) (19.267584 MB) (0.016384 MB)
+Operator #318 (gpu_0/shortcut_projection_30, Conv) 0.91552 ms/iter (9.865003 GFLOP, 10775.304869 GFLOPS) (19.267584 MB) (8.388608 MB)
+Operator #319 (gpu_0/shortcut_projection_30_spatbn, SpatialBN) 0.19795 ms/iter (0.019268 GFLOP, 97.335367 GFLOPS) (19.267584 MB) (0.016384 MB)
+Operator #320 (gpu_0/comp_30_sum_3, Sum) 0.0871784 ms/iter (0.004817 GFLOP, 55.253325 GFLOPS) (19.267584 MB)
+Operator #321 (gpu_0/comp_30_sum_3, Relu) 0.0641136 ms/iter (19.267584 MB)
+Operator #322 (gpu_0/comp_31_conv_1, Conv) 0.745656 ms/iter (9.865003 GFLOP, 13229.970986 GFLOPS) (9.633792 MB) (8.388608 MB)
+Operator #323 (gpu_0/comp_31_spatbn_1, SpatialBN) 0.108901 ms/iter (0.009634 GFLOP, 88.463441 GFLOPS) (9.633792 MB) (0.008192 MB)
+Operator #324 (gpu_0/comp_31_spatbn_1, Relu) 0.0378233 ms/iter (9.633792 MB)
+Operator #325 (gpu_0/comp_31_conv_2, Conv) 0.394714 ms/iter (1.387266 GFLOP, 3514.607960 GFLOPS) (9.633792 MB) (1.179648 MB)
+Operator #326 (gpu_0/comp_31_spatbn_2, SpatialBN) 0.109043 ms/iter (0.009634 GFLOP, 88.348964 GFLOPS) (9.633792 MB) (0.008192 MB)
+Operator #327 (gpu_0/comp_31_spatbn_2, Relu) 0.037995 ms/iter (9.633792 MB)
+Operator #328 (gpu_0/comp_31_conv_3, Conv) 0.914137 ms/iter (9.865003 GFLOP, 10791.599197 GFLOPS) (19.267584 MB) (8.388608 MB)
+Operator #329 (gpu_0/comp_31_spatbn_3, SpatialBN) 0.198426 ms/iter (0.019268 GFLOP, 97.102121 GFLOPS) (19.267584 MB) (0.016384 MB)
+Operator #330 (gpu_0/comp_31_sum_3, Sum) 0.087143 ms/iter (0.004817 GFLOP, 55.275766 GFLOPS) (19.267584 MB)
+Operator #331 (gpu_0/comp_31_sum_3, Relu) 0.0647741 ms/iter (19.267584 MB)
+Operator #332 (gpu_0/comp_32_conv_1, Conv) 0.74364 ms/iter (9.865003 GFLOP, 13265.834261 GFLOPS) (9.633792 MB) (8.388608 MB)
+Operator #333 (gpu_0/comp_32_spatbn_1, SpatialBN) 0.108567 ms/iter (0.009634 GFLOP, 88.735671 GFLOPS) (9.633792 MB) (0.008192 MB)
+Operator #334 (gpu_0/comp_32_spatbn_1, Relu) 0.037669 ms/iter (9.633792 MB)
+Operator #335 (gpu_0/comp_32_conv_2, Conv) 0.39075 ms/iter (1.387266 GFLOP, 3550.269305 GFLOPS) (9.633792 MB) (1.179648 MB)
+Operator #336 (gpu_0/comp_32_spatbn_2, SpatialBN) 0.109305 ms/iter (0.009634 GFLOP, 88.136868 GFLOPS) (9.633792 MB) (0.008192 MB)
+Operator #337 (gpu_0/comp_32_spatbn_2, Relu) 0.0380567 ms/iter (9.633792 MB)
+Operator #338 (gpu_0/comp_32_conv_3, Conv) 0.910315 ms/iter (9.865003 GFLOP, 10836.910970 GFLOPS) (19.267584 MB) (8.388608 MB)
+Operator #339 (gpu_0/comp_32_spatbn_3, SpatialBN) 0.197868 ms/iter (0.019268 GFLOP, 97.376047 GFLOPS) (19.267584 MB) (0.016384 MB)
+Operator #340 (gpu_0/comp_32_sum_3, Sum) 0.085954 ms/iter (0.004817 GFLOP, 56.040391 GFLOPS) (19.267584 MB)
+Operator #341 (gpu_0/comp_32_sum_3, Relu) 0.064561 ms/iter (19.267584 MB)
+Operator #342 (gpu_0/final_avg, AveragePool) 0.153832 ms/iter
+Operator #343 (gpu_0/last_out_L1000, FC) 0.0786817 ms/iter (0.196656 GFLOP, 2499.386725 GFLOPS) (0.192000 MB) (8.196000 MB)
+Operator #344 (gpu_0/softmax, SoftmaxWithLoss) 0.0787915 ms/iter
+Operator #345 (gpu_0/Resnext101_loss, Scale) 0.0141409 ms/iter
+Operator #346 (gpu_0/Resnext101_accuracy, Accuracy) 0.0228303 ms/iter
+Operator #347 (gpu_0/__m9_shared, ConstantFill) 0.0204945 ms/iter
+Operator #348 (gpu_0/__m10_shared, Scale) 0.0127144 ms/iter
+Operator #349 (gpu_0/__m9_shared, SoftmaxWithLossGradient) 0.0346286 ms/iter
+Operator #350 (gpu_0/last_out_L1000_w_grad, FCGradient) 0.140336 ms/iter (0.393264 GFLOP, 2802.301121 GFLOPS) (8.589216 MB) (8.196000 MB)
+Operator #351 (gpu_0/__m9_shared, AveragePoolGradient) 0.154112 ms/iter
+Operator #352 (gpu_0/__m9_shared, ReluGradient) 0.0895887 ms/iter
+Operator #353 (gpu_0/__m10_shared, SpatialBNGradient) 0.223452 ms/iter
+Operator #354 (gpu_0/comp_32_conv_3_w_grad, ConvGradient) 2.13357 ms/iter (19.730006 GFLOP, 9247.406566 GFLOPS) (18.022400 MB) (8.388608 MB)
+Operator #355 (gpu_0/__m6_shared, ReluGradient) 0.0511461 ms/iter
+Operator #356 (gpu_0/__m10_shared, SpatialBNGradient) 0.122469 ms/iter
+Operator #357 (gpu_0/comp_32_conv_2_w_grad, ConvGradient) 0.896162 ms/iter (88.785027 GFLOP, 99072.557850 GFLOPS) (10.813440 MB) (1.179648 MB)
+Operator #358 (gpu_0/__m6_shared, ReluGradient) 0.0516004 ms/iter
+Operator #359 (gpu_0/__m10_shared, SpatialBNGradient) 0.123056 ms/iter
+Operator #360 (gpu_0/comp_32_conv_1_w_grad, ConvGradient) 1.95418 ms/iter (19.730006 GFLOP, 10096.331372 GFLOPS) (27.656192 MB) (8.388608 MB)
+Operator #361 (gpu_0/__m6_shared, Sum) 0.0882631 ms/iter (0.004817 GFLOP, 54.574293 GFLOPS) (19.267584 MB)
+Operator #362 (gpu_0/__m6_shared, ReluGradient) 0.0876158 ms/iter
+Operator #363 (gpu_0/__m9_shared, SpatialBNGradient) 0.223267 ms/iter
+Operator #364 (gpu_0/comp_31_conv_3_w_grad, ConvGradient) 2.16573 ms/iter (19.730006 GFLOP, 9110.101809 GFLOPS) (18.022400 MB) (8.388608 MB)
+Operator #365 (gpu_0/__m10_shared, ReluGradient) 0.0512359 ms/iter
+Operator #366 (gpu_0/__m9_shared, SpatialBNGradient) 0.123162 ms/iter
+Operator #367 (gpu_0/comp_31_conv_2_w_grad, ConvGradient) 0.891582 ms/iter (88.785027 GFLOP, 99581.468506 GFLOPS) (10.813440 MB) (1.179648 MB)
+Operator #368 (gpu_0/__m10_shared, ReluGradient) 0.0518691 ms/iter
+Operator #369 (gpu_0/__m9_shared, SpatialBNGradient) 0.123331 ms/iter
+Operator #370 (gpu_0/comp_31_conv_1_w_grad, ConvGradient) 1.96395 ms/iter (19.730006 GFLOP, 10046.081886 GFLOPS) (27.656192 MB) (8.388608 MB)
+Operator #371 (gpu_0/__m10_shared, Sum) 0.0872862 ms/iter (0.004817 GFLOP, 55.185082 GFLOPS) (19.267584 MB)
+Operator #372 (gpu_0/__m10_shared, ReluGradient) 0.0873375 ms/iter
+Operator #373 (gpu_0/__m6_shared, SpatialBNGradient) 0.224963 ms/iter
+Operator #374 (gpu_0/shortcut_projection_30_w_grad, ConvGradient) 2.58 ms/iter (19.730006 GFLOP, 7647.281465 GFLOPS) (46.923776 MB) (8.388608 MB)
+Operator #375 (gpu_0/__m0_shared, SpatialBNGradient) 0.223046 ms/iter
+Operator #376 (gpu_0/comp_30_conv_3_w_grad, ConvGradient) 2.16592 ms/iter (19.730006 GFLOP, 9109.309182 GFLOPS) (18.022400 MB) (8.388608 MB)
+Operator #377 (gpu_0/__m1_shared, ReluGradient) 0.0509419 ms/iter
+Operator #378 (gpu_0/__m0_shared, SpatialBNGradient) 0.122217 ms/iter
+Operator #379 (gpu_0/comp_30_conv_2_w_grad, ConvGradient) 1.19438 ms/iter (88.785027 GFLOP, 74335.833540 GFLOPS) (39.714816 MB) (1.179648 MB)
+Operator #380 (gpu_0/__m1_shared, ReluGradient) 0.158973 ms/iter
+Operator #381 (gpu_0/__m0_shared, SpatialBNGradient) 0.268935 ms/iter
+Operator #382 (gpu_0/comp_30_conv_1_w_grad, ConvGradient) 3.33846 ms/iter (39.460012 GFLOP, 11819.818753 GFLOPS) (42.729472 MB) (4.194304 MB)
+Operator #383 (gpu_0/__m9_shared, Sum) 0.160385 ms/iter (0.009634 GFLOP, 60.066780 GFLOPS) (38.535168 MB)
+Operator #384 (gpu_0/__m9_shared, ReluGradient) 0.157115 ms/iter
+Operator #385 (gpu_0/__m6_shared, SpatialBNGradient) 0.267908 ms/iter
+Operator #386 (gpu_0/comp_29_conv_3_w_grad, ConvGradient) 1.81497 ms/iter (19.730006 GFLOP, 10870.696031 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #387 (gpu_0/__m8_shared, ReluGradient) 0.0875857 ms/iter
+Operator #388 (gpu_0/__m6_shared, SpatialBNGradient) 0.155058 ms/iter
+Operator #389 (gpu_0/comp_29_conv_2_w_grad, ConvGradient) 0.910648 ms/iter (88.785027 GFLOP, 97496.521092 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #390 (gpu_0/__m8_shared, ReluGradient) 0.0881562 ms/iter
+Operator #391 (gpu_0/__m6_shared, SpatialBNGradient) 0.153687 ms/iter
+Operator #392 (gpu_0/comp_29_conv_1_w_grad, ConvGradient) 1.72912 ms/iter (19.730006 GFLOP, 11410.421415 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #393 (gpu_0/__m8_shared, Sum) 0.158327 ms/iter (0.009634 GFLOP, 60.847323 GFLOPS) (38.535168 MB)
+Operator #394 (gpu_0/__m8_shared, ReluGradient) 0.155904 ms/iter
+Operator #395 (gpu_0/__m6_shared, SpatialBNGradient) 0.268329 ms/iter
+Operator #396 (gpu_0/comp_28_conv_3_w_grad, ConvGradient) 1.812 ms/iter (19.730006 GFLOP, 10888.543272 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #397 (gpu_0/__m9_shared, ReluGradient) 0.0872734 ms/iter
+Operator #398 (gpu_0/__m6_shared, SpatialBNGradient) 0.153333 ms/iter
+Operator #399 (gpu_0/comp_28_conv_2_w_grad, ConvGradient) 0.910814 ms/iter (88.785027 GFLOP, 97478.799229 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #400 (gpu_0/__m9_shared, ReluGradient) 0.0884513 ms/iter
+Operator #401 (gpu_0/__m6_shared, SpatialBNGradient) 0.153135 ms/iter
+Operator #402 (gpu_0/comp_28_conv_1_w_grad, ConvGradient) 1.7315 ms/iter (19.730006 GFLOP, 11394.727481 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #403 (gpu_0/__m9_shared, Sum) 0.158716 ms/iter (0.009634 GFLOP, 60.698154 GFLOPS) (38.535168 MB)
+Operator #404 (gpu_0/__m9_shared, ReluGradient) 0.157472 ms/iter
+Operator #405 (gpu_0/__m8_shared, SpatialBNGradient) 0.268004 ms/iter
+Operator #406 (gpu_0/comp_27_conv_3_w_grad, ConvGradient) 1.81018 ms/iter (19.730006 GFLOP, 10899.463292 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #407 (gpu_0/__m6_shared, ReluGradient) 0.0868358 ms/iter
+Operator #408 (gpu_0/__m8_shared, SpatialBNGradient) 0.153978 ms/iter
+Operator #409 (gpu_0/comp_27_conv_2_w_grad, ConvGradient) 0.907452 ms/iter (88.785027 GFLOP, 97839.862970 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #410 (gpu_0/__m6_shared, ReluGradient) 0.0885392 ms/iter
+Operator #411 (gpu_0/__m8_shared, SpatialBNGradient) 0.155334 ms/iter
+Operator #412 (gpu_0/comp_27_conv_1_w_grad, ConvGradient) 1.7363 ms/iter (19.730006 GFLOP, 11363.276533 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #413 (gpu_0/__m6_shared, Sum) 0.158328 ms/iter (0.009634 GFLOP, 60.847090 GFLOPS) (38.535168 MB)
+Operator #414 (gpu_0/__m6_shared, ReluGradient) 0.156816 ms/iter
+Operator #415 (gpu_0/__m8_shared, SpatialBNGradient) 0.269032 ms/iter
+Operator #416 (gpu_0/comp_26_conv_3_w_grad, ConvGradient) 1.81304 ms/iter (19.730006 GFLOP, 10882.306046 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #417 (gpu_0/__m9_shared, ReluGradient) 0.0876983 ms/iter
+Operator #418 (gpu_0/__m8_shared, SpatialBNGradient) 0.152953 ms/iter
+Operator #419 (gpu_0/comp_26_conv_2_w_grad, ConvGradient) 0.905761 ms/iter (88.785027 GFLOP, 98022.612420 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #420 (gpu_0/__m9_shared, ReluGradient) 0.0879653 ms/iter
+Operator #421 (gpu_0/__m8_shared, SpatialBNGradient) 0.152508 ms/iter
+Operator #422 (gpu_0/comp_26_conv_1_w_grad, ConvGradient) 1.72829 ms/iter (19.730006 GFLOP, 11415.884069 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #423 (gpu_0/__m9_shared, Sum) 0.157488 ms/iter (0.009634 GFLOP, 61.171673 GFLOPS) (38.535168 MB)
+Operator #424 (gpu_0/__m9_shared, ReluGradient) 0.156195 ms/iter
+Operator #425 (gpu_0/__m8_shared, SpatialBNGradient) 0.266305 ms/iter
+Operator #426 (gpu_0/comp_25_conv_3_w_grad, ConvGradient) 1.81037 ms/iter (19.730006 GFLOP, 10898.344814 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #427 (gpu_0/__m6_shared, ReluGradient) 0.0875622 ms/iter
+Operator #428 (gpu_0/__m8_shared, SpatialBNGradient) 0.154314 ms/iter
+Operator #429 (gpu_0/comp_25_conv_2_w_grad, ConvGradient) 0.90181 ms/iter (88.785027 GFLOP, 98452.024042 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #430 (gpu_0/__m6_shared, ReluGradient) 0.0873493 ms/iter
+Operator #431 (gpu_0/__m8_shared, SpatialBNGradient) 0.154833 ms/iter
+Operator #432 (gpu_0/comp_25_conv_1_w_grad, ConvGradient) 1.73328 ms/iter (19.730006 GFLOP, 11383.047337 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #433 (gpu_0/__m6_shared, Sum) 0.157763 ms/iter (0.009634 GFLOP, 61.065115 GFLOPS) (38.535168 MB)
+Operator #434 (gpu_0/__m6_shared, ReluGradient) 0.15664 ms/iter
+Operator #435 (gpu_0/__m8_shared, SpatialBNGradient) 0.267581 ms/iter
+Operator #436 (gpu_0/comp_24_conv_3_w_grad, ConvGradient) 1.81674 ms/iter (19.730006 GFLOP, 10860.122006 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #437 (gpu_0/__m9_shared, ReluGradient) 0.0875102 ms/iter
+Operator #438 (gpu_0/__m8_shared, SpatialBNGradient) 0.152236 ms/iter
+Operator #439 (gpu_0/comp_24_conv_2_w_grad, ConvGradient) 0.904563 ms/iter (88.785027 GFLOP, 98152.382140 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #440 (gpu_0/__m9_shared, ReluGradient) 0.0882802 ms/iter
+Operator #441 (gpu_0/__m8_shared, SpatialBNGradient) 0.151864 ms/iter
+Operator #442 (gpu_0/comp_24_conv_1_w_grad, ConvGradient) 1.7288 ms/iter (19.730006 GFLOP, 11412.517458 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #443 (gpu_0/__m9_shared, Sum) 0.157475 ms/iter (0.009634 GFLOP, 61.176489 GFLOPS) (38.535168 MB)
+Operator #444 (gpu_0/__m9_shared, ReluGradient) 0.156055 ms/iter
+Operator #445 (gpu_0/__m8_shared, SpatialBNGradient) 0.269985 ms/iter
+Operator #446 (gpu_0/comp_23_conv_3_w_grad, ConvGradient) 1.8155 ms/iter (19.730006 GFLOP, 10867.529084 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #447 (gpu_0/__m6_shared, ReluGradient) 0.0872361 ms/iter
+Operator #448 (gpu_0/__m8_shared, SpatialBNGradient) 0.154443 ms/iter
+Operator #449 (gpu_0/comp_23_conv_2_w_grad, ConvGradient) 0.910881 ms/iter (88.785027 GFLOP, 97471.614319 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #450 (gpu_0/__m6_shared, ReluGradient) 0.0874179 ms/iter
+Operator #451 (gpu_0/__m8_shared, SpatialBNGradient) 0.158319 ms/iter
+Operator #452 (gpu_0/comp_23_conv_1_w_grad, ConvGradient) 1.72864 ms/iter (19.730006 GFLOP, 11413.591585 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #453 (gpu_0/__m6_shared, Sum) 0.157735 ms/iter (0.009634 GFLOP, 61.075684 GFLOPS) (38.535168 MB)
+Operator #454 (gpu_0/__m6_shared, ReluGradient) 0.156612 ms/iter
+Operator #455 (gpu_0/__m8_shared, SpatialBNGradient) 0.267494 ms/iter
+Operator #456 (gpu_0/comp_22_conv_3_w_grad, ConvGradient) 1.80912 ms/iter (19.730006 GFLOP, 10905.863930 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #457 (gpu_0/__m9_shared, ReluGradient) 0.0858462 ms/iter
+Operator #458 (gpu_0/__m8_shared, SpatialBNGradient) 0.151212 ms/iter
+Operator #459 (gpu_0/comp_22_conv_2_w_grad, ConvGradient) 0.908078 ms/iter (88.785027 GFLOP, 97772.498352 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #460 (gpu_0/__m9_shared, ReluGradient) 0.0879287 ms/iter
+Operator #461 (gpu_0/__m8_shared, SpatialBNGradient) 0.152097 ms/iter
+Operator #462 (gpu_0/comp_22_conv_1_w_grad, ConvGradient) 1.72873 ms/iter (19.730006 GFLOP, 11413.034979 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #463 (gpu_0/__m9_shared, Sum) 0.157361 ms/iter (0.009634 GFLOP, 61.220845 GFLOPS) (38.535168 MB)
+Operator #464 (gpu_0/__m9_shared, ReluGradient) 0.157723 ms/iter
+Operator #465 (gpu_0/__m8_shared, SpatialBNGradient) 0.267131 ms/iter
+Operator #466 (gpu_0/comp_21_conv_3_w_grad, ConvGradient) 1.81285 ms/iter (19.730006 GFLOP, 10883.446426 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #467 (gpu_0/__m6_shared, ReluGradient) 0.0863062 ms/iter
+Operator #468 (gpu_0/__m8_shared, SpatialBNGradient) 0.154955 ms/iter
+Operator #469 (gpu_0/comp_21_conv_2_w_grad, ConvGradient) 0.906408 ms/iter (88.785027 GFLOP, 97952.635857 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #470 (gpu_0/__m6_shared, ReluGradient) 0.0878748 ms/iter
+Operator #471 (gpu_0/__m8_shared, SpatialBNGradient) 0.154089 ms/iter
+Operator #472 (gpu_0/comp_21_conv_1_w_grad, ConvGradient) 1.72833 ms/iter (19.730006 GFLOP, 11415.676196 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #473 (gpu_0/__m6_shared, Sum) 0.157622 ms/iter (0.009634 GFLOP, 61.119630 GFLOPS) (38.535168 MB)
+Operator #474 (gpu_0/__m6_shared, ReluGradient) 0.156809 ms/iter
+Operator #475 (gpu_0/__m8_shared, SpatialBNGradient) 0.269118 ms/iter
+Operator #476 (gpu_0/comp_20_conv_3_w_grad, ConvGradient) 1.80906 ms/iter (19.730006 GFLOP, 10906.218081 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #477 (gpu_0/__m9_shared, ReluGradient) 0.0867293 ms/iter
+Operator #478 (gpu_0/__m8_shared, SpatialBNGradient) 0.152848 ms/iter
+Operator #479 (gpu_0/comp_20_conv_2_w_grad, ConvGradient) 0.899498 ms/iter (88.785027 GFLOP, 98705.066207 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #480 (gpu_0/__m9_shared, ReluGradient) 0.0886158 ms/iter
+Operator #481 (gpu_0/__m8_shared, SpatialBNGradient) 0.151046 ms/iter
+Operator #482 (gpu_0/comp_20_conv_1_w_grad, ConvGradient) 1.72743 ms/iter (19.730006 GFLOP, 11421.573907 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #483 (gpu_0/__m9_shared, Sum) 0.158924 ms/iter (0.009634 GFLOP, 60.618823 GFLOPS) (38.535168 MB)
+Operator #484 (gpu_0/__m9_shared, ReluGradient) 0.156144 ms/iter
+Operator #485 (gpu_0/__m8_shared, SpatialBNGradient) 0.270859 ms/iter
+Operator #486 (gpu_0/comp_19_conv_3_w_grad, ConvGradient) 1.81195 ms/iter (19.730006 GFLOP, 10888.829817 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #487 (gpu_0/__m6_shared, ReluGradient) 0.0874537 ms/iter
+Operator #488 (gpu_0/__m8_shared, SpatialBNGradient) 0.1545 ms/iter
+Operator #489 (gpu_0/comp_19_conv_2_w_grad, ConvGradient) 0.907091 ms/iter (88.785027 GFLOP, 97878.869153 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #490 (gpu_0/__m6_shared, ReluGradient) 0.0881644 ms/iter
+Operator #491 (gpu_0/__m8_shared, SpatialBNGradient) 0.155145 ms/iter
+Operator #492 (gpu_0/comp_19_conv_1_w_grad, ConvGradient) 1.72774 ms/iter (19.730006 GFLOP, 11419.533787 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #493 (gpu_0/__m6_shared, Sum) 0.157695 ms/iter (0.009634 GFLOP, 61.091368 GFLOPS) (38.535168 MB)
+Operator #494 (gpu_0/__m6_shared, ReluGradient) 0.15656 ms/iter
+Operator #495 (gpu_0/__m8_shared, SpatialBNGradient) 0.269384 ms/iter
+Operator #496 (gpu_0/comp_18_conv_3_w_grad, ConvGradient) 1.81278 ms/iter (19.730006 GFLOP, 10883.850654 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #497 (gpu_0/__m9_shared, ReluGradient) 0.0875678 ms/iter
+Operator #498 (gpu_0/__m8_shared, SpatialBNGradient) 0.152603 ms/iter
+Operator #499 (gpu_0/comp_18_conv_2_w_grad, ConvGradient) 0.905923 ms/iter (88.785027 GFLOP, 98005.008316 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #500 (gpu_0/__m9_shared, ReluGradient) 0.0874534 ms/iter
+Operator #501 (gpu_0/__m8_shared, SpatialBNGradient) 0.151538 ms/iter
+Operator #502 (gpu_0/comp_18_conv_1_w_grad, ConvGradient) 1.72723 ms/iter (19.730006 GFLOP, 11422.888140 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #503 (gpu_0/__m9_shared, Sum) 0.15756 ms/iter (0.009634 GFLOP, 61.143644 GFLOPS) (38.535168 MB)
+Operator #504 (gpu_0/__m9_shared, ReluGradient) 0.15653 ms/iter
+Operator #505 (gpu_0/__m8_shared, SpatialBNGradient) 0.267531 ms/iter
+Operator #506 (gpu_0/comp_17_conv_3_w_grad, ConvGradient) 1.81562 ms/iter (19.730006 GFLOP, 10866.824680 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #507 (gpu_0/__m6_shared, ReluGradient) 0.0875854 ms/iter
+Operator #508 (gpu_0/__m8_shared, SpatialBNGradient) 0.153686 ms/iter
+Operator #509 (gpu_0/comp_17_conv_2_w_grad, ConvGradient) 0.905176 ms/iter (88.785027 GFLOP, 98085.971388 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #510 (gpu_0/__m6_shared, ReluGradient) 0.0873239 ms/iter
+Operator #511 (gpu_0/__m8_shared, SpatialBNGradient) 0.155367 ms/iter
+Operator #512 (gpu_0/comp_17_conv_1_w_grad, ConvGradient) 1.72971 ms/iter (19.730006 GFLOP, 11406.527212 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #513 (gpu_0/__m6_shared, Sum) 0.157424 ms/iter (0.009634 GFLOP, 61.196501 GFLOPS) (38.535168 MB)
+Operator #514 (gpu_0/__m6_shared, ReluGradient) 0.157046 ms/iter
+Operator #515 (gpu_0/__m8_shared, SpatialBNGradient) 0.268045 ms/iter
+Operator #516 (gpu_0/comp_16_conv_3_w_grad, ConvGradient) 1.81346 ms/iter (19.730006 GFLOP, 10879.785692 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #517 (gpu_0/__m9_shared, ReluGradient) 0.0865689 ms/iter
+Operator #518 (gpu_0/__m8_shared, SpatialBNGradient) 0.156482 ms/iter
+Operator #519 (gpu_0/comp_16_conv_2_w_grad, ConvGradient) 0.905812 ms/iter (88.785027 GFLOP, 98017.060150 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #520 (gpu_0/__m9_shared, ReluGradient) 0.0879987 ms/iter
+Operator #521 (gpu_0/__m8_shared, SpatialBNGradient) 0.151054 ms/iter
+Operator #522 (gpu_0/comp_16_conv_1_w_grad, ConvGradient) 1.73061 ms/iter (19.730006 GFLOP, 11400.632460 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #523 (gpu_0/__m9_shared, Sum) 0.157206 ms/iter (0.009634 GFLOP, 61.281214 GFLOPS) (38.535168 MB)
+Operator #524 (gpu_0/__m9_shared, ReluGradient) 0.156414 ms/iter
+Operator #525 (gpu_0/__m8_shared, SpatialBNGradient) 0.270359 ms/iter
+Operator #526 (gpu_0/comp_15_conv_3_w_grad, ConvGradient) 1.81654 ms/iter (19.730006 GFLOP, 10861.313622 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #527 (gpu_0/__m6_shared, ReluGradient) 0.0863247 ms/iter
+Operator #528 (gpu_0/__m8_shared, SpatialBNGradient) 0.15485 ms/iter
+Operator #529 (gpu_0/comp_15_conv_2_w_grad, ConvGradient) 0.906281 ms/iter (88.785027 GFLOP, 97966.293289 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #530 (gpu_0/__m6_shared, ReluGradient) 0.0897426 ms/iter
+Operator #531 (gpu_0/__m8_shared, SpatialBNGradient) 0.153351 ms/iter
+Operator #532 (gpu_0/comp_15_conv_1_w_grad, ConvGradient) 1.72796 ms/iter (19.730006 GFLOP, 11418.114455 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #533 (gpu_0/__m6_shared, Sum) 0.158109 ms/iter (0.009634 GFLOP, 60.931370 GFLOPS) (38.535168 MB)
+Operator #534 (gpu_0/__m6_shared, ReluGradient) 0.156891 ms/iter
+Operator #535 (gpu_0/__m8_shared, SpatialBNGradient) 0.270492 ms/iter
+Operator #536 (gpu_0/comp_14_conv_3_w_grad, ConvGradient) 1.81151 ms/iter (19.730006 GFLOP, 10891.466745 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #537 (gpu_0/__m9_shared, ReluGradient) 0.0880217 ms/iter
+Operator #538 (gpu_0/__m8_shared, SpatialBNGradient) 0.151568 ms/iter
+Operator #539 (gpu_0/comp_14_conv_2_w_grad, ConvGradient) 0.912968 ms/iter (88.785027 GFLOP, 97248.796737 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #540 (gpu_0/__m9_shared, ReluGradient) 0.0883122 ms/iter
+Operator #541 (gpu_0/__m8_shared, SpatialBNGradient) 0.153827 ms/iter
+Operator #542 (gpu_0/comp_14_conv_1_w_grad, ConvGradient) 1.72625 ms/iter (19.730006 GFLOP, 11429.431012 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #543 (gpu_0/__m9_shared, Sum) 0.157862 ms/iter (0.009634 GFLOP, 61.026555 GFLOPS) (38.535168 MB)
+Operator #544 (gpu_0/__m9_shared, ReluGradient) 0.155862 ms/iter
+Operator #545 (gpu_0/__m8_shared, SpatialBNGradient) 0.266848 ms/iter
+Operator #546 (gpu_0/comp_13_conv_3_w_grad, ConvGradient) 1.81685 ms/iter (19.730006 GFLOP, 10859.433383 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #547 (gpu_0/__m6_shared, ReluGradient) 0.0878939 ms/iter
+Operator #548 (gpu_0/__m8_shared, SpatialBNGradient) 0.15376 ms/iter
+Operator #549 (gpu_0/comp_13_conv_2_w_grad, ConvGradient) 0.911004 ms/iter (88.785027 GFLOP, 97458.441333 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #550 (gpu_0/__m6_shared, ReluGradient) 0.0878876 ms/iter
+Operator #551 (gpu_0/__m8_shared, SpatialBNGradient) 0.153845 ms/iter
+Operator #552 (gpu_0/comp_13_conv_1_w_grad, ConvGradient) 1.72667 ms/iter (19.730006 GFLOP, 11426.609237 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #553 (gpu_0/__m6_shared, Sum) 0.15836 ms/iter (0.009634 GFLOP, 60.834599 GFLOPS) (38.535168 MB)
+Operator #554 (gpu_0/__m6_shared, ReluGradient) 0.155533 ms/iter
+Operator #555 (gpu_0/__m8_shared, SpatialBNGradient) 0.269606 ms/iter
+Operator #556 (gpu_0/comp_12_conv_3_w_grad, ConvGradient) 1.81504 ms/iter (19.730006 GFLOP, 10870.266507 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #557 (gpu_0/__m9_shared, ReluGradient) 0.0878485 ms/iter
+Operator #558 (gpu_0/__m8_shared, SpatialBNGradient) 0.152393 ms/iter
+Operator #559 (gpu_0/comp_12_conv_2_w_grad, ConvGradient) 0.90868 ms/iter (88.785027 GFLOP, 97707.728490 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #560 (gpu_0/__m9_shared, ReluGradient) 0.087699 ms/iter
+Operator #561 (gpu_0/__m8_shared, SpatialBNGradient) 0.152272 ms/iter
+Operator #562 (gpu_0/comp_12_conv_1_w_grad, ConvGradient) 1.72533 ms/iter (19.730006 GFLOP, 11435.513611 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #563 (gpu_0/__m9_shared, Sum) 0.15755 ms/iter (0.009634 GFLOP, 61.147447 GFLOPS) (38.535168 MB)
+Operator #564 (gpu_0/__m9_shared, ReluGradient) 0.157031 ms/iter
+Operator #565 (gpu_0/__m8_shared, SpatialBNGradient) 0.271408 ms/iter
+Operator #566 (gpu_0/comp_11_conv_3_w_grad, ConvGradient) 1.81373 ms/iter (19.730006 GFLOP, 10878.163303 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #567 (gpu_0/__m6_shared, ReluGradient) 0.0877797 ms/iter
+Operator #568 (gpu_0/__m8_shared, SpatialBNGradient) 0.153356 ms/iter
+Operator #569 (gpu_0/comp_11_conv_2_w_grad, ConvGradient) 0.904301 ms/iter (88.785027 GFLOP, 98180.889178 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #570 (gpu_0/__m6_shared, ReluGradient) 0.0876528 ms/iter
+Operator #571 (gpu_0/__m8_shared, SpatialBNGradient) 0.154448 ms/iter
+Operator #572 (gpu_0/comp_11_conv_1_w_grad, ConvGradient) 1.73171 ms/iter (19.730006 GFLOP, 11393.343171 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #573 (gpu_0/__m6_shared, Sum) 0.158062 ms/iter (0.009634 GFLOP, 60.949563 GFLOPS) (38.535168 MB)
+Operator #574 (gpu_0/__m6_shared, ReluGradient) 0.155666 ms/iter
+Operator #575 (gpu_0/__m8_shared, SpatialBNGradient) 0.266882 ms/iter
+Operator #576 (gpu_0/comp_10_conv_3_w_grad, ConvGradient) 1.81396 ms/iter (19.730006 GFLOP, 10876.787283 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #577 (gpu_0/__m9_shared, ReluGradient) 0.0867543 ms/iter
+Operator #578 (gpu_0/__m8_shared, SpatialBNGradient) 0.15175 ms/iter
+Operator #579 (gpu_0/comp_10_conv_2_w_grad, ConvGradient) 0.909652 ms/iter (88.785027 GFLOP, 97603.335644 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #580 (gpu_0/__m9_shared, ReluGradient) 0.0877524 ms/iter
+Operator #581 (gpu_0/__m8_shared, SpatialBNGradient) 0.15228 ms/iter
+Operator #582 (gpu_0/comp_10_conv_1_w_grad, ConvGradient) 1.72813 ms/iter (19.730006 GFLOP, 11416.980251 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #583 (gpu_0/__m9_shared, Sum) 0.157631 ms/iter (0.009634 GFLOP, 61.116256 GFLOPS) (38.535168 MB)
+Operator #584 (gpu_0/__m9_shared, ReluGradient) 0.156866 ms/iter
+Operator #585 (gpu_0/__m8_shared, SpatialBNGradient) 0.267662 ms/iter
+Operator #586 (gpu_0/comp_9_conv_3_w_grad, ConvGradient) 1.81511 ms/iter (19.730006 GFLOP, 10869.848438 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #587 (gpu_0/__m6_shared, ReluGradient) 0.08726 ms/iter
+Operator #588 (gpu_0/__m8_shared, SpatialBNGradient) 0.156085 ms/iter
+Operator #589 (gpu_0/comp_9_conv_2_w_grad, ConvGradient) 0.907666 ms/iter (88.785027 GFLOP, 97816.825668 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #590 (gpu_0/__m6_shared, ReluGradient) 0.0877335 ms/iter
+Operator #591 (gpu_0/__m8_shared, SpatialBNGradient) 0.155223 ms/iter
+Operator #592 (gpu_0/comp_9_conv_1_w_grad, ConvGradient) 1.72771 ms/iter (19.730006 GFLOP, 11419.754407 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #593 (gpu_0/__m6_shared, Sum) 0.157511 ms/iter (0.009634 GFLOP, 61.162821 GFLOPS) (38.535168 MB)
+Operator #594 (gpu_0/__m6_shared, ReluGradient) 0.156592 ms/iter
+Operator #595 (gpu_0/__m8_shared, SpatialBNGradient) 0.269145 ms/iter
+Operator #596 (gpu_0/comp_8_conv_3_w_grad, ConvGradient) 1.81177 ms/iter (19.730006 GFLOP, 10889.921121 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #597 (gpu_0/__m9_shared, ReluGradient) 0.0873678 ms/iter
+Operator #598 (gpu_0/__m8_shared, SpatialBNGradient) 0.150961 ms/iter
+Operator #599 (gpu_0/comp_8_conv_2_w_grad, ConvGradient) 0.906692 ms/iter (88.785027 GFLOP, 97921.881931 GFLOPS) (19.562496 MB) (0.294912 MB)
+Operator #600 (gpu_0/__m9_shared, ReluGradient) 0.0884277 ms/iter
+Operator #601 (gpu_0/__m8_shared, SpatialBNGradient) 0.155058 ms/iter
+Operator #602 (gpu_0/comp_8_conv_1_w_grad, ConvGradient) 1.73023 ms/iter (19.730006 GFLOP, 11403.118349 GFLOPS) (40.632320 MB) (2.097152 MB)
+Operator #603 (gpu_0/__m9_shared, Sum) 0.157451 ms/iter (0.009634 GFLOP, 61.186086 GFLOPS) (38.535168 MB)
+Operator #604 (gpu_0/__m9_shared, ReluGradient) 0.156002 ms/iter
+Operator #605 (gpu_0/__m8_shared, SpatialBNGradient) 0.26799 ms/iter
+Operator #606 (gpu_0/shortcut_projection_7_w_grad, ConvGradient) 2.35906 ms/iter (19.730006 GFLOP, 8363.520505 GFLOPS) (79.167488 MB) (2.097152 MB)
+Operator #607 (gpu_0/__m2_shared, SpatialBNGradient) 0.26826 ms/iter
+Operator #608 (gpu_0/comp_7_conv_3_w_grad, ConvGradient) 1.8128 ms/iter (19.730006 GFLOP, 10883.730413 GFLOPS) (21.364736 MB) (2.097152 MB)
+Operator #609 (gpu_0/__m12_shared, ReluGradient) 0.087656 ms/iter
+Operator #610 (gpu_0/__m2_shared, SpatialBNGradient) 0.152578 ms/iter
+Operator #611 (gpu_0/comp_7_conv_2_w_grad, ConvGradient) 1.5409 ms/iter (88.785027 GFLOP, 57618.754655 GFLOPS) (77.365248 MB) (0.294912 MB)
+Operator #612 (gpu_0/__m12_shared, ReluGradient) 0.298288 ms/iter
+Operator #613 (gpu_0/__m2_shared, SpatialBNGradient) 0.520064 ms/iter
+Operator #614 (gpu_0/comp_7_conv_1_w_grad, ConvGradient) 3.28158 ms/iter (39.460012 GFLOP, 12024.688010 GFLOPS) (78.118912 MB) (1.048576 MB)
+Operator #615 (gpu_0/__m6_shared, Sum) 0.29923 ms/iter (0.019268 GFLOP, 64.390636 GFLOPS) (77.070336 MB)
+Operator #616 (gpu_0/__m6_shared, ReluGradient) 0.296091 ms/iter
+Operator #617 (gpu_0/__m8_shared, SpatialBNGradient) 0.520667 ms/iter
+Operator #618 (gpu_0/comp_6_conv_3_w_grad, ConvGradient) 1.69295 ms/iter (19.730006 GFLOP, 11654.187328 GFLOPS) (39.059456 MB) (0.524288 MB)
+Operator #619 (gpu_0/__m7_shared, ReluGradient) 0.158297 ms/iter
+Operator #620 (gpu_0/__m8_shared, SpatialBNGradient) 0.322517 ms/iter
+Operator #621 (gpu_0/comp_6_conv_2_w_grad, ConvGradient) 1.76852 ms/iter (88.785027 GFLOP, 50202.967332 GFLOPS) (38.608896 MB) (0.073728 MB)
+Operator #622 (gpu_0/__m7_shared, ReluGradient) 0.158691 ms/iter
+Operator #623 (gpu_0/__m8_shared, SpatialBNGradient) 0.321696 ms/iter
+Operator #624 (gpu_0/comp_6_conv_1_w_grad, ConvGradient) 1.70341 ms/iter (19.730006 GFLOP, 11582.665709 GFLOPS) (77.594624 MB) (0.524288 MB)
+Operator #625 (gpu_0/__m7_shared, Sum) 0.296839 ms/iter (0.019268 GFLOP, 64.909290 GFLOPS) (77.070336 MB)
+Operator #626 (gpu_0/__m7_shared, ReluGradient) 0.296924 ms/iter
+Operator #627 (gpu_0/__m8_shared, SpatialBNGradient) 0.520791 ms/iter
+Operator #628 (gpu_0/comp_5_conv_3_w_grad, ConvGradient) 1.66741 ms/iter (19.730006 GFLOP, 11832.718824 GFLOPS) (39.059456 MB) (0.524288 MB)
+Operator #629 (gpu_0/__m6_shared, ReluGradient) 0.15713 ms/iter
+Operator #630 (gpu_0/__m8_shared, SpatialBNGradient) 0.323039 ms/iter
+Operator #631 (gpu_0/comp_5_conv_2_w_grad, ConvGradient) 1.76014 ms/iter (88.785027 GFLOP, 50441.953541 GFLOPS) (38.608896 MB) (0.073728 MB)
+Operator #632 (gpu_0/__m6_shared, ReluGradient) 0.15972 ms/iter
+Operator #633 (gpu_0/__m8_shared, SpatialBNGradient) 0.322696 ms/iter
+Operator #634 (gpu_0/comp_5_conv_1_w_grad, ConvGradient) 1.69541 ms/iter (19.730006 GFLOP, 11637.297692 GFLOPS) (77.594624 MB) (0.524288 MB)
+Operator #635 (gpu_0/__m6_shared, Sum) 0.296637 ms/iter (0.019268 GFLOP, 64.953322 GFLOPS) (77.070336 MB)
+Operator #636 (gpu_0/__m6_shared, ReluGradient) 0.295054 ms/iter
+Operator #637 (gpu_0/__m7_shared, SpatialBNGradient) 0.520083 ms/iter
+Operator #638 (gpu_0/comp_4_conv_3_w_grad, ConvGradient) 1.66615 ms/iter (19.730006 GFLOP, 11841.691490 GFLOPS) (39.059456 MB) (0.524288 MB)
+Operator #639 (gpu_0/__m8_shared, ReluGradient) 0.158368 ms/iter
+Operator #640 (gpu_0/__m7_shared, SpatialBNGradient) 0.321558 ms/iter
+Operator #641 (gpu_0/comp_4_conv_2_w_grad, ConvGradient) 1.75251 ms/iter (88.785027 GFLOP, 50661.547654 GFLOPS) (38.608896 MB) (0.073728 MB)
+Operator #642 (gpu_0/__m8_shared, ReluGradient) 0.159142 ms/iter
+Operator #643 (gpu_0/__m7_shared, SpatialBNGradient) 0.322265 ms/iter
+Operator #644 (gpu_0/comp_4_conv_1_w_grad, ConvGradient) 1.6993 ms/iter (19.730006 GFLOP, 11610.692798 GFLOPS) (77.594624 MB) (0.524288 MB)
+Operator #645 (gpu_0/__m8_shared, Sum) 0.298241 ms/iter (0.019268 GFLOP, 64.604035 GFLOPS) (77.070336 MB)
+Operator #646 (gpu_0/__m8_shared, ReluGradient) 0.295893 ms/iter
+Operator #647 (gpu_0/__m7_shared, SpatialBNGradient) 0.521775 ms/iter
+Operator #648 (gpu_0/shortcut_projection_3_w_grad, ConvGradient) 2.37894 ms/iter (19.730006 GFLOP, 8293.628212 GFLOPS) (154.664960 MB) (0.524288 MB)
+Operator #649 (gpu_0/__m3_shared, SpatialBNGradient) 0.521536 ms/iter
+Operator #650 (gpu_0/comp_3_conv_3_w_grad, ConvGradient) 1.667 ms/iter (19.730006 GFLOP, 11835.645908 GFLOPS) (39.059456 MB) (0.524288 MB)
+Operator #651 (gpu_0/__m11_shared, ReluGradient) 0.157913 ms/iter
+Operator #652 (gpu_0/__m3_shared, SpatialBNGradient) 0.32078 ms/iter
+Operator #653 (gpu_0/comp_3_conv_2_w_grad, ConvGradient) 3.50691 ms/iter (88.785027 GFLOP, 25317.186962 GFLOPS) (154.214400 MB) (0.073728 MB)
+Operator #654 (gpu_0/__m11_shared, ReluGradient) 0.581947 ms/iter
+Operator #655 (gpu_0/__m3_shared, SpatialBNGradient) 1.17767 ms/iter
+Operator #656 (gpu_0/comp_3_conv_1_w_grad, ConvGradient) 3.27496 ms/iter (39.460012 GFLOP, 12049.013016 GFLOPS) (154.402816 MB) (0.262144 MB)
+Operator #657 (gpu_0/__m6_shared, Sum) 0.578408 ms/iter (0.038535 GFLOP, 66.622807 GFLOPS) (154.140672 MB)
+Operator #658 (gpu_0/__m6_shared, ReluGradient) 0.576852 ms/iter
+Operator #659 (gpu_0/__m7_shared, SpatialBNGradient) 1.17421 ms/iter
+Operator #660 (gpu_0/comp_2_conv_3_w_grad, ConvGradient) 1.74969 ms/iter (19.730006 GFLOP, 11276.259263 GFLOPS) (77.201408 MB) (0.131072 MB)
+Operator #661 (gpu_0/__m5_shared, ReluGradient) 0.297789 ms/iter
+Operator #662 (gpu_0/__m7_shared, SpatialBNGradient) 0.788754 ms/iter
+Operator #663 (gpu_0/comp_2_conv_2_w_grad, ConvGradient) 3.76342 ms/iter (88.785027 GFLOP, 23591.587331 GFLOPS) (77.088768 MB) (0.018432 MB)
+Operator #664 (gpu_0/__m5_shared, ReluGradient) 0.297874 ms/iter
+Operator #665 (gpu_0/__m7_shared, SpatialBNGradient) 0.787796 ms/iter
+Operator #666 (gpu_0/comp_2_conv_1_w_grad, ConvGradient) 1.78863 ms/iter (19.730006 GFLOP, 11030.815175 GFLOPS) (154.271744 MB) (0.131072 MB)
+Operator #667 (gpu_0/__m5_shared, Sum) 0.577739 ms/iter (0.038535 GFLOP, 66.700009 GFLOPS) (154.140672 MB)
+Operator #668 (gpu_0/__m5_shared, ReluGradient) 0.576767 ms/iter
+Operator #669 (gpu_0/__m7_shared, SpatialBNGradient) 1.17541 ms/iter
+Operator #670 (gpu_0/comp_1_conv_3_w_grad, ConvGradient) 1.75181 ms/iter (19.730006 GFLOP, 11262.639889 GFLOPS) (77.201408 MB) (0.131072 MB)
+Operator #671 (gpu_0/__m6_shared, ReluGradient) 0.296643 ms/iter
+Operator #672 (gpu_0/__m7_shared, SpatialBNGradient) 0.789827 ms/iter
+Operator #673 (gpu_0/comp_1_conv_2_w_grad, ConvGradient) 3.76142 ms/iter (88.785027 GFLOP, 23604.110057 GFLOPS) (77.088768 MB) (0.018432 MB)
+Operator #674 (gpu_0/__m6_shared, ReluGradient) 0.297033 ms/iter
+Operator #675 (gpu_0/__m7_shared, SpatialBNGradient) 0.789245 ms/iter
+Operator #676 (gpu_0/comp_1_conv_1_w_grad, ConvGradient) 1.78432 ms/iter (19.730006 GFLOP, 11057.409407 GFLOPS) (154.271744 MB) (0.131072 MB)
+Operator #677 (gpu_0/__m6_shared, Sum) 0.577177 ms/iter (0.038535 GFLOP, 66.764906 GFLOPS) (154.140672 MB)
+Operator #678 (gpu_0/__m6_shared, ReluGradient) 0.577001 ms/iter
+Operator #679 (gpu_0/__m5_shared, SpatialBNGradient) 1.17384 ms/iter
+Operator #680 (gpu_0/shortcut_projection_0_w_grad, ConvGradient) 1.14817 ms/iter (9.865003 GFLOP, 8591.965172 GFLOPS) (38.600704 MB) (0.065536 MB)
+Operator #681 (gpu_0/__m4_shared, SpatialBNGradient) 1.17419 ms/iter
+Operator #682 (gpu_0/comp_0_conv_3_w_grad, ConvGradient) 1.74641 ms/iter (19.730006 GFLOP, 11297.434323 GFLOPS) (77.201408 MB) (0.131072 MB)
+Operator #683 (gpu_0/__m13_shared, ReluGradient) 0.298365 ms/iter
+Operator #684 (gpu_0/__m4_shared, SpatialBNGradient) 0.781919 ms/iter
+Operator #685 (gpu_0/comp_0_conv_2_w_grad, ConvGradient) 3.76152 ms/iter (88.785027 GFLOP, 23603.511611 GFLOPS) (77.088768 MB) (0.018432 MB)
+Operator #686 (gpu_0/__m13_shared, ReluGradient) 0.297767 ms/iter
+Operator #687 (gpu_0/__m4_shared, SpatialBNGradient) 0.787802 ms/iter
+Operator #688 (gpu_0/comp_0_conv_1_w_grad, ConvGradient) 0.754993 ms/iter (4.932502 GFLOP, 6533.171764 GFLOPS) (38.567936 MB) (0.032768 MB)
+Operator #689 (gpu_0/__m7_shared, Sum) 0.157791 ms/iter (0.009634 GFLOP, 61.054287 GFLOPS) (38.535168 MB)
+Operator #690 (gpu_0/__m5_shared, MaxPoolGradient) 0.965981 ms/iter
+Operator #691 (gpu_0/__m5_shared, ReluGradient) 0.574646 ms/iter
+Operator #692 (gpu_0/__m7_shared, SpatialBNGradient) 2.2757 ms/iter
+Operator #693 (gpu_0/conv1_w_grad, ConvGradient) 3.6298 ms/iter (22.658679 GFLOP, 6242.410708 GFLOPS) (28.939008 MB) (0.037632 MB)
+Operator #694 (optimizer_iteration, AtomicIter) 0.0019531 ms/iter
+Operator #695 (MultiPrecisionSgdOptimizer_0_lr_gpu0, LearningRate) 0.0177262 ms/iter
+Operator #696 (gpu_0/conv1_w, WeightedSum) 0.041835 ms/iter (0.000028 GFLOP, 0.674650 GFLOPS) (0.037632 MB) (0.000008 MB)
+Operator #697 (gpu_0/conv1_spatbn_relu_s, WeightedSum) 0.0340184 ms/iter (0.000000 GFLOP, 0.005644 GFLOPS) (0.000256 MB) (0.000008 MB)
+Operator #698 (gpu_0/conv1_spatbn_relu_b, WeightedSum) 0.0328832 ms/iter (0.000000 GFLOP, 0.005839 GFLOPS) (0.000256 MB) (0.000008 MB)
+Operator #699 (gpu_0/comp_0_conv_1_w, WeightedSum) 0.0335127 ms/iter (0.000025 GFLOP, 0.733334 GFLOPS) (0.032768 MB) (0.000008 MB)
+Operator #700 (gpu_0/comp_0_spatbn_1_s, WeightedSum) 0.0329097 ms/iter (0.000000 GFLOP, 0.011668 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #701 (gpu_0/comp_0_spatbn_1_b, WeightedSum) 0.0329807 ms/iter (0.000000 GFLOP, 0.011643 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #702 (gpu_0/comp_0_conv_2_w, WeightedSum) 0.0332712 ms/iter (0.000014 GFLOP, 0.415494 GFLOPS) (0.018432 MB) (0.000008 MB)
+Operator #703 (gpu_0/comp_0_spatbn_2_s, WeightedSum) 0.0333184 ms/iter (0.000000 GFLOP, 0.011525 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #704 (gpu_0/comp_0_spatbn_2_b, WeightedSum) 0.0327265 ms/iter (0.000000 GFLOP, 0.011734 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #705 (gpu_0/comp_0_conv_3_w, WeightedSum) 0.0338148 ms/iter (0.000098 GFLOP, 2.907129 GFLOPS) (0.131072 MB) (0.000008 MB)
+Operator #706 (gpu_0/comp_0_spatbn_3_s, WeightedSum) 0.0330364 ms/iter (0.000001 GFLOP, 0.023247 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #707 (gpu_0/comp_0_spatbn_3_b, WeightedSum) 0.033069 ms/iter (0.000001 GFLOP, 0.023224 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #708 (gpu_0/shortcut_projection_0_w, WeightedSum) 0.0331821 ms/iter (0.000049 GFLOP, 1.481281 GFLOPS) (0.065536 MB) (0.000008 MB)
+Operator #709 (gpu_0/shortcut_projection_0_spatbn_s, WeightedSum) 0.0331559 ms/iter (0.000001 GFLOP, 0.023163 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #710 (gpu_0/shortcut_projection_0_spatbn_b, WeightedSum) 0.0331021 ms/iter (0.000001 GFLOP, 0.023201 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #711 (gpu_0/comp_1_conv_1_w, WeightedSum) 0.0341165 ms/iter (0.000098 GFLOP, 2.881421 GFLOPS) (0.131072 MB) (0.000008 MB)
+Operator #712 (gpu_0/comp_1_spatbn_1_s, WeightedSum) 0.034694 ms/iter (0.000000 GFLOP, 0.011068 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #713 (gpu_0/comp_1_spatbn_1_b, WeightedSum) 0.0328079 ms/iter (0.000000 GFLOP, 0.011704 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #714 (gpu_0/comp_1_conv_2_w, WeightedSum) 0.0331378 ms/iter (0.000014 GFLOP, 0.417167 GFLOPS) (0.018432 MB) (0.000008 MB)
+Operator #715 (gpu_0/comp_1_spatbn_2_s, WeightedSum) 0.032982 ms/iter (0.000000 GFLOP, 0.011643 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #716 (gpu_0/comp_1_spatbn_2_b, WeightedSum) 0.0341061 ms/iter (0.000000 GFLOP, 0.011259 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #717 (gpu_0/comp_1_conv_3_w, WeightedSum) 0.0344154 ms/iter (0.000098 GFLOP, 2.856396 GFLOPS) (0.131072 MB) (0.000008 MB)
+Operator #718 (gpu_0/comp_1_spatbn_3_s, WeightedSum) 0.033282 ms/iter (0.000001 GFLOP, 0.023076 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #719 (gpu_0/comp_1_spatbn_3_b, WeightedSum) 0.0329462 ms/iter (0.000001 GFLOP, 0.023311 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #720 (gpu_0/comp_2_conv_1_w, WeightedSum) 0.0337795 ms/iter (0.000098 GFLOP, 2.910167 GFLOPS) (0.131072 MB) (0.000008 MB)
+Operator #721 (gpu_0/comp_2_spatbn_1_s, WeightedSum) 0.0328739 ms/iter (0.000000 GFLOP, 0.011681 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #722 (gpu_0/comp_2_spatbn_1_b, WeightedSum) 0.033051 ms/iter (0.000000 GFLOP, 0.011618 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #723 (gpu_0/comp_2_conv_2_w, WeightedSum) 0.0334001 ms/iter (0.000014 GFLOP, 0.413891 GFLOPS) (0.018432 MB) (0.000008 MB)
+Operator #724 (gpu_0/comp_2_spatbn_2_s, WeightedSum) 0.0331403 ms/iter (0.000000 GFLOP, 0.011587 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #725 (gpu_0/comp_2_spatbn_2_b, WeightedSum) 0.0328905 ms/iter (0.000000 GFLOP, 0.011675 GFLOPS) (0.000512 MB) (0.000008 MB)
+Operator #726 (gpu_0/comp_2_conv_3_w, WeightedSum) 0.0341161 ms/iter (0.000098 GFLOP, 2.881455 GFLOPS) (0.131072 MB) (0.000008 MB)
+Operator #727 (gpu_0/comp_2_spatbn_3_s, WeightedSum) 0.0332712 ms/iter (0.000001 GFLOP, 0.023083 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #728 (gpu_0/comp_2_spatbn_3_b, WeightedSum) 0.03273 ms/iter (0.000001 GFLOP, 0.023465 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #729 (gpu_0/comp_3_conv_1_w, WeightedSum) 0.0348005 ms/iter (0.000197 GFLOP, 5.649574 GFLOPS) (0.262144 MB) (0.000008 MB)
+Operator #730 (gpu_0/comp_3_spatbn_1_s, WeightedSum) 0.0330433 ms/iter (0.000001 GFLOP, 0.023242 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #731 (gpu_0/comp_3_spatbn_1_b, WeightedSum) 0.0330753 ms/iter (0.000001 GFLOP, 0.023220 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #732 (gpu_0/comp_3_conv_2_w, WeightedSum) 0.0333229 ms/iter (0.000055 GFLOP, 1.659400 GFLOPS) (0.073728 MB) (0.000008 MB)
+Operator #733 (gpu_0/comp_3_spatbn_2_s, WeightedSum) 0.0326863 ms/iter (0.000001 GFLOP, 0.023496 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #734 (gpu_0/comp_3_spatbn_2_b, WeightedSum) 0.0344122 ms/iter (0.000001 GFLOP, 0.022318 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #735 (gpu_0/comp_3_conv_3_w, WeightedSum) 0.0359757 ms/iter (0.000393 GFLOP, 10.930044 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #736 (gpu_0/comp_3_spatbn_3_s, WeightedSum) 0.0331878 ms/iter (0.000002 GFLOP, 0.046282 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #737 (gpu_0/comp_3_spatbn_3_b, WeightedSum) 0.0331764 ms/iter (0.000002 GFLOP, 0.046298 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #738 (gpu_0/shortcut_projection_3_w, WeightedSum) 0.036102 ms/iter (0.000393 GFLOP, 10.891807 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #739 (gpu_0/shortcut_projection_3_spatbn_s, WeightedSum) 0.0334608 ms/iter (0.000002 GFLOP, 0.045904 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #740 (gpu_0/shortcut_projection_3_spatbn_b, WeightedSum) 0.0333264 ms/iter (0.000002 GFLOP, 0.046090 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #741 (gpu_0/comp_4_conv_1_w, WeightedSum) 0.0357921 ms/iter (0.000393 GFLOP, 10.986111 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #742 (gpu_0/comp_4_spatbn_1_s, WeightedSum) 0.0329931 ms/iter (0.000001 GFLOP, 0.023278 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #743 (gpu_0/comp_4_spatbn_1_b, WeightedSum) 0.0331611 ms/iter (0.000001 GFLOP, 0.023160 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #744 (gpu_0/comp_4_conv_2_w, WeightedSum) 0.0332865 ms/iter (0.000055 GFLOP, 1.661214 GFLOPS) (0.073728 MB) (0.000008 MB)
+Operator #745 (gpu_0/comp_4_spatbn_2_s, WeightedSum) 0.0331476 ms/iter (0.000001 GFLOP, 0.023169 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #746 (gpu_0/comp_4_spatbn_2_b, WeightedSum) 0.0328736 ms/iter (0.000001 GFLOP, 0.023362 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #747 (gpu_0/comp_4_conv_3_w, WeightedSum) 0.0368877 ms/iter (0.000393 GFLOP, 10.659814 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #748 (gpu_0/comp_4_spatbn_3_s, WeightedSum) 0.0335058 ms/iter (0.000002 GFLOP, 0.045843 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #749 (gpu_0/comp_4_spatbn_3_b, WeightedSum) 0.0330424 ms/iter (0.000002 GFLOP, 0.046486 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #750 (gpu_0/comp_5_conv_1_w, WeightedSum) 0.0360584 ms/iter (0.000393 GFLOP, 10.904977 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #751 (gpu_0/comp_5_spatbn_1_s, WeightedSum) 0.0332798 ms/iter (0.000001 GFLOP, 0.023077 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #752 (gpu_0/comp_5_spatbn_1_b, WeightedSum) 0.0328372 ms/iter (0.000001 GFLOP, 0.023388 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #753 (gpu_0/comp_5_conv_2_w, WeightedSum) 0.0334817 ms/iter (0.000055 GFLOP, 1.651529 GFLOPS) (0.073728 MB) (0.000008 MB)
+Operator #754 (gpu_0/comp_5_spatbn_2_s, WeightedSum) 0.0327087 ms/iter (0.000001 GFLOP, 0.023480 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #755 (gpu_0/comp_5_spatbn_2_b, WeightedSum) 0.0327382 ms/iter (0.000001 GFLOP, 0.023459 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #756 (gpu_0/comp_5_conv_3_w, WeightedSum) 0.0357303 ms/iter (0.000393 GFLOP, 11.005114 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #757 (gpu_0/comp_5_spatbn_3_s, WeightedSum) 0.0333971 ms/iter (0.000002 GFLOP, 0.045992 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #758 (gpu_0/comp_5_spatbn_3_b, WeightedSum) 0.0331282 ms/iter (0.000002 GFLOP, 0.046365 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #759 (gpu_0/comp_6_conv_1_w, WeightedSum) 0.0372358 ms/iter (0.000393 GFLOP, 10.560161 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #760 (gpu_0/comp_6_spatbn_1_s, WeightedSum) 0.0336638 ms/iter (0.000001 GFLOP, 0.022814 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #761 (gpu_0/comp_6_spatbn_1_b, WeightedSum) 0.0328054 ms/iter (0.000001 GFLOP, 0.023411 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #762 (gpu_0/comp_6_conv_2_w, WeightedSum) 0.0329779 ms/iter (0.000055 GFLOP, 1.676759 GFLOPS) (0.073728 MB) (0.000008 MB)
+Operator #763 (gpu_0/comp_6_spatbn_2_s, WeightedSum) 0.0327963 ms/iter (0.000001 GFLOP, 0.023417 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #764 (gpu_0/comp_6_spatbn_2_b, WeightedSum) 0.0329302 ms/iter (0.000001 GFLOP, 0.023322 GFLOPS) (0.001024 MB) (0.000008 MB)
+Operator #765 (gpu_0/comp_6_conv_3_w, WeightedSum) 0.0354965 ms/iter (0.000393 GFLOP, 11.077600 GFLOPS) (0.524288 MB) (0.000008 MB)
+Operator #766 (gpu_0/comp_6_spatbn_3_s, WeightedSum) 0.0330322 ms/iter (0.000002 GFLOP, 0.046500 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #767 (gpu_0/comp_6_spatbn_3_b, WeightedSum) 0.0328025 ms/iter (0.000002 GFLOP, 0.046826 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #768 (gpu_0/comp_7_conv_1_w, WeightedSum) 0.0374246 ms/iter (0.000786 GFLOP, 21.013772 GFLOPS) (1.048576 MB) (0.000008 MB)
+Operator #769 (gpu_0/comp_7_spatbn_1_s, WeightedSum) 0.0331354 ms/iter (0.000002 GFLOP, 0.046355 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #770 (gpu_0/comp_7_spatbn_1_b, WeightedSum) 0.0329626 ms/iter (0.000002 GFLOP, 0.046598 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #771 (gpu_0/comp_7_conv_2_w, WeightedSum) 0.0360321 ms/iter (0.000221 GFLOP, 6.138526 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #772 (gpu_0/comp_7_spatbn_2_s, WeightedSum) 0.0335199 ms/iter (0.000002 GFLOP, 0.045824 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #773 (gpu_0/comp_7_spatbn_2_b, WeightedSum) 0.0332617 ms/iter (0.000002 GFLOP, 0.046179 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #774 (gpu_0/comp_7_conv_3_w, WeightedSum) 0.0413525 ms/iter (0.001573 GFLOP, 38.035525 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #775 (gpu_0/comp_7_spatbn_3_s, WeightedSum) 0.0333386 ms/iter (0.000003 GFLOP, 0.092145 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #776 (gpu_0/comp_7_spatbn_3_b, WeightedSum) 0.0330252 ms/iter (0.000003 GFLOP, 0.093020 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #777 (gpu_0/shortcut_projection_7_w, WeightedSum) 0.0414011 ms/iter (0.001573 GFLOP, 37.990874 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #778 (gpu_0/shortcut_projection_7_spatbn_s, WeightedSum) 0.0352174 ms/iter (0.000003 GFLOP, 0.087230 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #779 (gpu_0/shortcut_projection_7_spatbn_b, WeightedSum) 0.0333594 ms/iter (0.000003 GFLOP, 0.092088 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #780 (gpu_0/comp_8_conv_1_w, WeightedSum) 0.041112 ms/iter (0.001573 GFLOP, 38.258024 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #781 (gpu_0/comp_8_spatbn_1_s, WeightedSum) 0.0334539 ms/iter (0.000002 GFLOP, 0.045914 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #782 (gpu_0/comp_8_spatbn_1_b, WeightedSum) 0.0329296 ms/iter (0.000002 GFLOP, 0.046645 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #783 (gpu_0/comp_8_conv_2_w, WeightedSum) 0.0365657 ms/iter (0.000221 GFLOP, 6.048948 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #784 (gpu_0/comp_8_spatbn_2_s, WeightedSum) 0.0334104 ms/iter (0.000002 GFLOP, 0.045974 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #785 (gpu_0/comp_8_spatbn_2_b, WeightedSum) 0.0332476 ms/iter (0.000002 GFLOP, 0.046199 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #786 (gpu_0/comp_8_conv_3_w, WeightedSum) 0.0413843 ms/iter (0.001573 GFLOP, 38.006297 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #787 (gpu_0/comp_8_spatbn_3_s, WeightedSum) 0.0337851 ms/iter (0.000003 GFLOP, 0.090928 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #788 (gpu_0/comp_8_spatbn_3_b, WeightedSum) 0.0345779 ms/iter (0.000003 GFLOP, 0.088843 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #789 (gpu_0/comp_9_conv_1_w, WeightedSum) 0.042044 ms/iter (0.001573 GFLOP, 37.409950 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #790 (gpu_0/comp_9_spatbn_1_s, WeightedSum) 0.0340685 ms/iter (0.000002 GFLOP, 0.045086 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #791 (gpu_0/comp_9_spatbn_1_b, WeightedSum) 0.0334262 ms/iter (0.000002 GFLOP, 0.045952 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #792 (gpu_0/comp_9_conv_2_w, WeightedSum) 0.0350511 ms/iter (0.000221 GFLOP, 6.310330 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #793 (gpu_0/comp_9_spatbn_2_s, WeightedSum) 0.0333746 ms/iter (0.000002 GFLOP, 0.046023 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #794 (gpu_0/comp_9_spatbn_2_b, WeightedSum) 0.0331158 ms/iter (0.000002 GFLOP, 0.046383 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #795 (gpu_0/comp_9_conv_3_w, WeightedSum) 0.0414067 ms/iter (0.001573 GFLOP, 37.985734 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #796 (gpu_0/comp_9_spatbn_3_s, WeightedSum) 0.0336027 ms/iter (0.000003 GFLOP, 0.091421 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #797 (gpu_0/comp_9_spatbn_3_b, WeightedSum) 0.0336598 ms/iter (0.000003 GFLOP, 0.091266 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #798 (gpu_0/comp_10_conv_1_w, WeightedSum) 0.0421533 ms/iter (0.001573 GFLOP, 37.312946 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #799 (gpu_0/comp_10_spatbn_1_s, WeightedSum) 0.0337046 ms/iter (0.000002 GFLOP, 0.045572 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #800 (gpu_0/comp_10_spatbn_1_b, WeightedSum) 0.0331921 ms/iter (0.000002 GFLOP, 0.046276 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #801 (gpu_0/comp_10_conv_2_w, WeightedSum) 0.0359951 ms/iter (0.000221 GFLOP, 6.144836 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #802 (gpu_0/comp_10_spatbn_2_s, WeightedSum) 0.0334752 ms/iter (0.000002 GFLOP, 0.045885 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #803 (gpu_0/comp_10_spatbn_2_b, WeightedSum) 0.0331708 ms/iter (0.000002 GFLOP, 0.046306 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #804 (gpu_0/comp_10_conv_3_w, WeightedSum) 0.0412887 ms/iter (0.001573 GFLOP, 38.094299 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #805 (gpu_0/comp_10_spatbn_3_s, WeightedSum) 0.0335593 ms/iter (0.000003 GFLOP, 0.091539 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #806 (gpu_0/comp_10_spatbn_3_b, WeightedSum) 0.0345891 ms/iter (0.000003 GFLOP, 0.088814 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #807 (gpu_0/comp_11_conv_1_w, WeightedSum) 0.0420694 ms/iter (0.001573 GFLOP, 37.387363 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #808 (gpu_0/comp_11_spatbn_1_s, WeightedSum) 0.0333405 ms/iter (0.000002 GFLOP, 0.046070 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #809 (gpu_0/comp_11_spatbn_1_b, WeightedSum) 0.0336049 ms/iter (0.000002 GFLOP, 0.045708 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #810 (gpu_0/comp_11_conv_2_w, WeightedSum) 0.035119 ms/iter (0.000221 GFLOP, 6.298129 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #811 (gpu_0/comp_11_spatbn_2_s, WeightedSum) 0.0335389 ms/iter (0.000002 GFLOP, 0.045798 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #812 (gpu_0/comp_11_spatbn_2_b, WeightedSum) 0.0330489 ms/iter (0.000002 GFLOP, 0.046477 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #813 (gpu_0/comp_11_conv_3_w, WeightedSum) 0.0411094 ms/iter (0.001573 GFLOP, 38.260446 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #814 (gpu_0/comp_11_spatbn_3_s, WeightedSum) 0.0333892 ms/iter (0.000003 GFLOP, 0.092006 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #815 (gpu_0/comp_11_spatbn_3_b, WeightedSum) 0.0332924 ms/iter (0.000003 GFLOP, 0.092273 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #816 (gpu_0/comp_12_conv_1_w, WeightedSum) 0.0413159 ms/iter (0.001573 GFLOP, 38.069219 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #817 (gpu_0/comp_12_spatbn_1_s, WeightedSum) 0.0340529 ms/iter (0.000002 GFLOP, 0.045106 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #818 (gpu_0/comp_12_spatbn_1_b, WeightedSum) 0.0330849 ms/iter (0.000002 GFLOP, 0.046426 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #819 (gpu_0/comp_12_conv_2_w, WeightedSum) 0.0350297 ms/iter (0.000221 GFLOP, 6.314185 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #820 (gpu_0/comp_12_spatbn_2_s, WeightedSum) 0.0335858 ms/iter (0.000002 GFLOP, 0.045734 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #821 (gpu_0/comp_12_spatbn_2_b, WeightedSum) 0.0329372 ms/iter (0.000002 GFLOP, 0.046634 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #822 (gpu_0/comp_12_conv_3_w, WeightedSum) 0.0415104 ms/iter (0.001573 GFLOP, 37.890844 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #823 (gpu_0/comp_12_spatbn_3_s, WeightedSum) 0.033604 ms/iter (0.000003 GFLOP, 0.091418 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #824 (gpu_0/comp_12_spatbn_3_b, WeightedSum) 0.0332135 ms/iter (0.000003 GFLOP, 0.092493 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #825 (gpu_0/comp_13_conv_1_w, WeightedSum) 0.0414614 ms/iter (0.001573 GFLOP, 37.935620 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #826 (gpu_0/comp_13_spatbn_1_s, WeightedSum) 0.0352391 ms/iter (0.000002 GFLOP, 0.043588 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #827 (gpu_0/comp_13_spatbn_1_b, WeightedSum) 0.0335521 ms/iter (0.000002 GFLOP, 0.045780 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #828 (gpu_0/comp_13_conv_2_w, WeightedSum) 0.0349224 ms/iter (0.000221 GFLOP, 6.333585 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #829 (gpu_0/comp_13_spatbn_2_s, WeightedSum) 0.0332895 ms/iter (0.000002 GFLOP, 0.046141 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #830 (gpu_0/comp_13_spatbn_2_b, WeightedSum) 0.032979 ms/iter (0.000002 GFLOP, 0.046575 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #831 (gpu_0/comp_13_conv_3_w, WeightedSum) 0.0425723 ms/iter (0.001573 GFLOP, 36.945712 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #832 (gpu_0/comp_13_spatbn_3_s, WeightedSum) 0.0336007 ms/iter (0.000003 GFLOP, 0.091427 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #833 (gpu_0/comp_13_spatbn_3_b, WeightedSum) 0.0330899 ms/iter (0.000003 GFLOP, 0.092838 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #834 (gpu_0/comp_14_conv_1_w, WeightedSum) 0.0414381 ms/iter (0.001573 GFLOP, 37.956956 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #835 (gpu_0/comp_14_spatbn_1_s, WeightedSum) 0.0333616 ms/iter (0.000002 GFLOP, 0.046041 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #836 (gpu_0/comp_14_spatbn_1_b, WeightedSum) 0.0331269 ms/iter (0.000002 GFLOP, 0.046367 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #837 (gpu_0/comp_14_conv_2_w, WeightedSum) 0.0348138 ms/iter (0.000221 GFLOP, 6.353343 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #838 (gpu_0/comp_14_spatbn_2_s, WeightedSum) 0.0332746 ms/iter (0.000002 GFLOP, 0.046161 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #839 (gpu_0/comp_14_spatbn_2_b, WeightedSum) 0.0334184 ms/iter (0.000002 GFLOP, 0.045963 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #840 (gpu_0/comp_14_conv_3_w, WeightedSum) 0.0412901 ms/iter (0.001573 GFLOP, 38.093007 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #841 (gpu_0/comp_14_spatbn_3_s, WeightedSum) 0.0335939 ms/iter (0.000003 GFLOP, 0.091445 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #842 (gpu_0/comp_14_spatbn_3_b, WeightedSum) 0.0331014 ms/iter (0.000003 GFLOP, 0.092806 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #843 (gpu_0/comp_15_conv_1_w, WeightedSum) 0.0416081 ms/iter (0.001573 GFLOP, 37.801869 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #844 (gpu_0/comp_15_spatbn_1_s, WeightedSum) 0.0334103 ms/iter (0.000002 GFLOP, 0.045974 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #845 (gpu_0/comp_15_spatbn_1_b, WeightedSum) 0.0331115 ms/iter (0.000002 GFLOP, 0.046389 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #846 (gpu_0/comp_15_conv_2_w, WeightedSum) 0.034774 ms/iter (0.000221 GFLOP, 6.360614 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #847 (gpu_0/comp_15_spatbn_2_s, WeightedSum) 0.0330365 ms/iter (0.000002 GFLOP, 0.046494 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #848 (gpu_0/comp_15_spatbn_2_b, WeightedSum) 0.0343976 ms/iter (0.000002 GFLOP, 0.044654 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #849 (gpu_0/comp_15_conv_3_w, WeightedSum) 0.0410998 ms/iter (0.001573 GFLOP, 38.269385 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #850 (gpu_0/comp_15_spatbn_3_s, WeightedSum) 0.033415 ms/iter (0.000003 GFLOP, 0.091935 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #851 (gpu_0/comp_15_spatbn_3_b, WeightedSum) 0.0331901 ms/iter (0.000003 GFLOP, 0.092558 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #852 (gpu_0/comp_16_conv_1_w, WeightedSum) 0.0413573 ms/iter (0.001573 GFLOP, 38.031110 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #853 (gpu_0/comp_16_spatbn_1_s, WeightedSum) 0.0333887 ms/iter (0.000002 GFLOP, 0.046004 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #854 (gpu_0/comp_16_spatbn_1_b, WeightedSum) 0.0330307 ms/iter (0.000002 GFLOP, 0.046502 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #855 (gpu_0/comp_16_conv_2_w, WeightedSum) 0.0351367 ms/iter (0.000221 GFLOP, 6.294957 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #856 (gpu_0/comp_16_spatbn_2_s, WeightedSum) 0.0335607 ms/iter (0.000002 GFLOP, 0.045768 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #857 (gpu_0/comp_16_spatbn_2_b, WeightedSum) 0.0329784 ms/iter (0.000002 GFLOP, 0.046576 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #858 (gpu_0/comp_16_conv_3_w, WeightedSum) 0.0411525 ms/iter (0.001573 GFLOP, 38.220374 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #859 (gpu_0/comp_16_spatbn_3_s, WeightedSum) 0.0333776 ms/iter (0.000003 GFLOP, 0.092038 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #860 (gpu_0/comp_16_spatbn_3_b, WeightedSum) 0.0342927 ms/iter (0.000003 GFLOP, 0.089582 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #861 (gpu_0/comp_17_conv_1_w, WeightedSum) 0.0413085 ms/iter (0.001573 GFLOP, 38.076039 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #862 (gpu_0/comp_17_spatbn_1_s, WeightedSum) 0.0335417 ms/iter (0.000002 GFLOP, 0.045794 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #863 (gpu_0/comp_17_spatbn_1_b, WeightedSum) 0.0332845 ms/iter (0.000002 GFLOP, 0.046148 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #864 (gpu_0/comp_17_conv_2_w, WeightedSum) 0.0349914 ms/iter (0.000221 GFLOP, 6.321096 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #865 (gpu_0/comp_17_spatbn_2_s, WeightedSum) 0.0331795 ms/iter (0.000002 GFLOP, 0.046294 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #866 (gpu_0/comp_17_spatbn_2_b, WeightedSum) 0.0331374 ms/iter (0.000002 GFLOP, 0.046352 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #867 (gpu_0/comp_17_conv_3_w, WeightedSum) 0.0415168 ms/iter (0.001573 GFLOP, 37.884999 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #868 (gpu_0/comp_17_spatbn_3_s, WeightedSum) 0.034108 ms/iter (0.000003 GFLOP, 0.090067 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #869 (gpu_0/comp_17_spatbn_3_b, WeightedSum) 0.0331832 ms/iter (0.000003 GFLOP, 0.092577 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #870 (gpu_0/comp_18_conv_1_w, WeightedSum) 0.0412349 ms/iter (0.001573 GFLOP, 38.143998 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #871 (gpu_0/comp_18_spatbn_1_s, WeightedSum) 0.0334209 ms/iter (0.000002 GFLOP, 0.045959 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #872 (gpu_0/comp_18_spatbn_1_b, WeightedSum) 0.0347284 ms/iter (0.000002 GFLOP, 0.044229 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #873 (gpu_0/comp_18_conv_2_w, WeightedSum) 0.0354849 ms/iter (0.000221 GFLOP, 6.233187 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #874 (gpu_0/comp_18_spatbn_2_s, WeightedSum) 0.0338646 ms/iter (0.000002 GFLOP, 0.045357 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #875 (gpu_0/comp_18_spatbn_2_b, WeightedSum) 0.0332586 ms/iter (0.000002 GFLOP, 0.046184 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #876 (gpu_0/comp_18_conv_3_w, WeightedSum) 0.041559 ms/iter (0.001573 GFLOP, 37.846533 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #877 (gpu_0/comp_18_spatbn_3_s, WeightedSum) 0.0333795 ms/iter (0.000003 GFLOP, 0.092033 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #878 (gpu_0/comp_18_spatbn_3_b, WeightedSum) 0.0358321 ms/iter (0.000003 GFLOP, 0.085733 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #879 (gpu_0/comp_19_conv_1_w, WeightedSum) 0.0420406 ms/iter (0.001573 GFLOP, 37.412976 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #880 (gpu_0/comp_19_spatbn_1_s, WeightedSum) 0.0335141 ms/iter (0.000002 GFLOP, 0.045831 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #881 (gpu_0/comp_19_spatbn_1_b, WeightedSum) 0.0332173 ms/iter (0.000002 GFLOP, 0.046241 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #882 (gpu_0/comp_19_conv_2_w, WeightedSum) 0.0349232 ms/iter (0.000221 GFLOP, 6.333440 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #883 (gpu_0/comp_19_spatbn_2_s, WeightedSum) 0.0328582 ms/iter (0.000002 GFLOP, 0.046746 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #884 (gpu_0/comp_19_spatbn_2_b, WeightedSum) 0.0344117 ms/iter (0.000002 GFLOP, 0.044636 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #885 (gpu_0/comp_19_conv_3_w, WeightedSum) 0.041519 ms/iter (0.001573 GFLOP, 37.882995 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #886 (gpu_0/comp_19_spatbn_3_s, WeightedSum) 0.0335865 ms/iter (0.000003 GFLOP, 0.091465 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #887 (gpu_0/comp_19_spatbn_3_b, WeightedSum) 0.0331595 ms/iter (0.000003 GFLOP, 0.092643 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #888 (gpu_0/comp_20_conv_1_w, WeightedSum) 0.0415449 ms/iter (0.001573 GFLOP, 37.859377 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #889 (gpu_0/comp_20_spatbn_1_s, WeightedSum) 0.0337793 ms/iter (0.000002 GFLOP, 0.045472 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #890 (gpu_0/comp_20_spatbn_1_b, WeightedSum) 0.0330953 ms/iter (0.000002 GFLOP, 0.046411 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #891 (gpu_0/comp_20_conv_2_w, WeightedSum) 0.0349092 ms/iter (0.000221 GFLOP, 6.335980 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #892 (gpu_0/comp_20_spatbn_2_s, WeightedSum) 0.0330864 ms/iter (0.000002 GFLOP, 0.046424 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #893 (gpu_0/comp_20_spatbn_2_b, WeightedSum) 0.0331675 ms/iter (0.000002 GFLOP, 0.046310 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #894 (gpu_0/comp_20_conv_3_w, WeightedSum) 0.0410447 ms/iter (0.001573 GFLOP, 38.320760 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #895 (gpu_0/comp_20_spatbn_3_s, WeightedSum) 0.0343354 ms/iter (0.000003 GFLOP, 0.089470 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #896 (gpu_0/comp_20_spatbn_3_b, WeightedSum) 0.0334074 ms/iter (0.000003 GFLOP, 0.091956 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #897 (gpu_0/comp_21_conv_1_w, WeightedSum) 0.0415703 ms/iter (0.001573 GFLOP, 37.836244 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #898 (gpu_0/comp_21_spatbn_1_s, WeightedSum) 0.0360139 ms/iter (0.000002 GFLOP, 0.042650 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #899 (gpu_0/comp_21_spatbn_1_b, WeightedSum) 0.0334032 ms/iter (0.000002 GFLOP, 0.045984 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #900 (gpu_0/comp_21_conv_2_w, WeightedSum) 0.0348635 ms/iter (0.000221 GFLOP, 6.344285 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #901 (gpu_0/comp_21_spatbn_2_s, WeightedSum) 0.0330275 ms/iter (0.000002 GFLOP, 0.046507 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #902 (gpu_0/comp_21_spatbn_2_b, WeightedSum) 0.0331495 ms/iter (0.000002 GFLOP, 0.046336 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #903 (gpu_0/comp_21_conv_3_w, WeightedSum) 0.0412546 ms/iter (0.001573 GFLOP, 38.125787 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #904 (gpu_0/comp_21_spatbn_3_s, WeightedSum) 0.0331206 ms/iter (0.000003 GFLOP, 0.092752 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #905 (gpu_0/comp_21_spatbn_3_b, WeightedSum) 0.033106 ms/iter (0.000003 GFLOP, 0.092793 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #906 (gpu_0/comp_22_conv_1_w, WeightedSum) 0.041494 ms/iter (0.001573 GFLOP, 37.905820 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #907 (gpu_0/comp_22_spatbn_1_s, WeightedSum) 0.0334005 ms/iter (0.000002 GFLOP, 0.045987 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #908 (gpu_0/comp_22_spatbn_1_b, WeightedSum) 0.033039 ms/iter (0.000002 GFLOP, 0.046491 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #909 (gpu_0/comp_22_conv_2_w, WeightedSum) 0.0351435 ms/iter (0.000221 GFLOP, 6.293738 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #910 (gpu_0/comp_22_spatbn_2_s, WeightedSum) 0.0332769 ms/iter (0.000002 GFLOP, 0.046158 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #911 (gpu_0/comp_22_spatbn_2_b, WeightedSum) 0.0327893 ms/iter (0.000002 GFLOP, 0.046845 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #912 (gpu_0/comp_22_conv_3_w, WeightedSum) 0.0410848 ms/iter (0.001573 GFLOP, 38.283356 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #913 (gpu_0/comp_22_spatbn_3_s, WeightedSum) 0.0335006 ms/iter (0.000003 GFLOP, 0.091700 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #914 (gpu_0/comp_22_spatbn_3_b, WeightedSum) 0.0330292 ms/iter (0.000003 GFLOP, 0.093009 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #915 (gpu_0/comp_23_conv_1_w, WeightedSum) 0.0411935 ms/iter (0.001573 GFLOP, 38.182337 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #916 (gpu_0/comp_23_spatbn_1_s, WeightedSum) 0.0331757 ms/iter (0.000002 GFLOP, 0.046299 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #917 (gpu_0/comp_23_spatbn_1_b, WeightedSum) 0.0329288 ms/iter (0.000002 GFLOP, 0.046646 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #918 (gpu_0/comp_23_conv_2_w, WeightedSum) 0.0360132 ms/iter (0.000221 GFLOP, 6.141748 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #919 (gpu_0/comp_23_spatbn_2_s, WeightedSum) 0.0334194 ms/iter (0.000002 GFLOP, 0.045961 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #920 (gpu_0/comp_23_spatbn_2_b, WeightedSum) 0.0329359 ms/iter (0.000002 GFLOP, 0.046636 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #921 (gpu_0/comp_23_conv_3_w, WeightedSum) 0.0413012 ms/iter (0.001573 GFLOP, 38.082765 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #922 (gpu_0/comp_23_spatbn_3_s, WeightedSum) 0.0334985 ms/iter (0.000003 GFLOP, 0.091706 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #923 (gpu_0/comp_23_spatbn_3_b, WeightedSum) 0.0331136 ms/iter (0.000003 GFLOP, 0.092772 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #924 (gpu_0/comp_24_conv_1_w, WeightedSum) 0.0410858 ms/iter (0.001573 GFLOP, 38.282420 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #925 (gpu_0/comp_24_spatbn_1_s, WeightedSum) 0.0335587 ms/iter (0.000002 GFLOP, 0.045771 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #926 (gpu_0/comp_24_spatbn_1_b, WeightedSum) 0.033051 ms/iter (0.000002 GFLOP, 0.046474 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #927 (gpu_0/comp_24_conv_2_w, WeightedSum) 0.0352326 ms/iter (0.000221 GFLOP, 6.277823 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #928 (gpu_0/comp_24_spatbn_2_s, WeightedSum) 0.0331273 ms/iter (0.000002 GFLOP, 0.046367 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #929 (gpu_0/comp_24_spatbn_2_b, WeightedSum) 0.0328149 ms/iter (0.000002 GFLOP, 0.046808 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #930 (gpu_0/comp_24_conv_3_w, WeightedSum) 0.0413225 ms/iter (0.001573 GFLOP, 38.063141 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #931 (gpu_0/comp_24_spatbn_3_s, WeightedSum) 0.033279 ms/iter (0.000003 GFLOP, 0.092310 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #932 (gpu_0/comp_24_spatbn_3_b, WeightedSum) 0.0330271 ms/iter (0.000003 GFLOP, 0.093015 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #933 (gpu_0/comp_25_conv_1_w, WeightedSum) 0.0415554 ms/iter (0.001573 GFLOP, 37.849811 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #934 (gpu_0/comp_25_spatbn_1_s, WeightedSum) 0.0337625 ms/iter (0.000002 GFLOP, 0.045494 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #935 (gpu_0/comp_25_spatbn_1_b, WeightedSum) 0.0329874 ms/iter (0.000002 GFLOP, 0.046563 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #936 (gpu_0/comp_25_conv_2_w, WeightedSum) 0.0351938 ms/iter (0.000221 GFLOP, 6.284743 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #937 (gpu_0/comp_25_spatbn_2_s, WeightedSum) 0.033406 ms/iter (0.000002 GFLOP, 0.045980 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #938 (gpu_0/comp_25_spatbn_2_b, WeightedSum) 0.0346895 ms/iter (0.000002 GFLOP, 0.044279 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #939 (gpu_0/comp_25_conv_3_w, WeightedSum) 0.041524 ms/iter (0.001573 GFLOP, 37.878438 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #940 (gpu_0/comp_25_spatbn_3_s, WeightedSum) 0.0333931 ms/iter (0.000003 GFLOP, 0.091995 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #941 (gpu_0/comp_25_spatbn_3_b, WeightedSum) 0.033181 ms/iter (0.000003 GFLOP, 0.092583 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #942 (gpu_0/comp_26_conv_1_w, WeightedSum) 0.0412913 ms/iter (0.001573 GFLOP, 38.091893 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #943 (gpu_0/comp_26_spatbn_1_s, WeightedSum) 0.0346161 ms/iter (0.000002 GFLOP, 0.044372 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #944 (gpu_0/comp_26_spatbn_1_b, WeightedSum) 0.0333163 ms/iter (0.000002 GFLOP, 0.046104 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #945 (gpu_0/comp_26_conv_2_w, WeightedSum) 0.034826 ms/iter (0.000221 GFLOP, 6.351117 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #946 (gpu_0/comp_26_spatbn_2_s, WeightedSum) 0.0330374 ms/iter (0.000002 GFLOP, 0.046493 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #947 (gpu_0/comp_26_spatbn_2_b, WeightedSum) 0.0329412 ms/iter (0.000002 GFLOP, 0.046629 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #948 (gpu_0/comp_26_conv_3_w, WeightedSum) 0.0412353 ms/iter (0.001573 GFLOP, 38.143631 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #949 (gpu_0/comp_26_spatbn_3_s, WeightedSum) 0.0335876 ms/iter (0.000003 GFLOP, 0.091462 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #950 (gpu_0/comp_26_spatbn_3_b, WeightedSum) 0.0334894 ms/iter (0.000003 GFLOP, 0.091731 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #951 (gpu_0/comp_27_conv_1_w, WeightedSum) 0.0416065 ms/iter (0.001573 GFLOP, 37.803326 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #952 (gpu_0/comp_27_spatbn_1_s, WeightedSum) 0.0333248 ms/iter (0.000002 GFLOP, 0.046092 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #953 (gpu_0/comp_27_spatbn_1_b, WeightedSum) 0.0330753 ms/iter (0.000002 GFLOP, 0.046439 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #954 (gpu_0/comp_27_conv_2_w, WeightedSum) 0.0353961 ms/iter (0.000221 GFLOP, 6.248824 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #955 (gpu_0/comp_27_spatbn_2_s, WeightedSum) 0.0344362 ms/iter (0.000002 GFLOP, 0.044604 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #956 (gpu_0/comp_27_spatbn_2_b, WeightedSum) 0.0333607 ms/iter (0.000002 GFLOP, 0.046042 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #957 (gpu_0/comp_27_conv_3_w, WeightedSum) 0.0412999 ms/iter (0.001573 GFLOP, 38.083966 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #958 (gpu_0/comp_27_spatbn_3_s, WeightedSum) 0.0334539 ms/iter (0.000003 GFLOP, 0.091828 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #959 (gpu_0/comp_27_spatbn_3_b, WeightedSum) 0.0330886 ms/iter (0.000003 GFLOP, 0.092842 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #960 (gpu_0/comp_28_conv_1_w, WeightedSum) 0.0424194 ms/iter (0.001573 GFLOP, 37.078883 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #961 (gpu_0/comp_28_spatbn_1_s, WeightedSum) 0.0349409 ms/iter (0.000002 GFLOP, 0.043960 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #962 (gpu_0/comp_28_spatbn_1_b, WeightedSum) 0.0333694 ms/iter (0.000002 GFLOP, 0.046030 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #963 (gpu_0/comp_28_conv_2_w, WeightedSum) 0.03535 ms/iter (0.000221 GFLOP, 6.256973 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #964 (gpu_0/comp_28_spatbn_2_s, WeightedSum) 0.0332655 ms/iter (0.000002 GFLOP, 0.046174 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #965 (gpu_0/comp_28_spatbn_2_b, WeightedSum) 0.033102 ms/iter (0.000002 GFLOP, 0.046402 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #966 (gpu_0/comp_28_conv_3_w, WeightedSum) 0.0412543 ms/iter (0.001573 GFLOP, 38.126062 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #967 (gpu_0/comp_28_spatbn_3_s, WeightedSum) 0.0335065 ms/iter (0.000003 GFLOP, 0.091684 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #968 (gpu_0/comp_28_spatbn_3_b, WeightedSum) 0.0330183 ms/iter (0.000003 GFLOP, 0.093039 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #969 (gpu_0/comp_29_conv_1_w, WeightedSum) 0.041199 ms/iter (0.001573 GFLOP, 38.177239 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #970 (gpu_0/comp_29_spatbn_1_s, WeightedSum) 0.0333245 ms/iter (0.000002 GFLOP, 0.046092 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #971 (gpu_0/comp_29_spatbn_1_b, WeightedSum) 0.0346453 ms/iter (0.000002 GFLOP, 0.044335 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #972 (gpu_0/comp_29_conv_2_w, WeightedSum) 0.0353848 ms/iter (0.000221 GFLOP, 6.250820 GFLOPS) (0.294912 MB) (0.000008 MB)
+Operator #973 (gpu_0/comp_29_spatbn_2_s, WeightedSum) 0.0332499 ms/iter (0.000002 GFLOP, 0.046196 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #974 (gpu_0/comp_29_spatbn_2_b, WeightedSum) 0.0330273 ms/iter (0.000002 GFLOP, 0.046507 GFLOPS) (0.002048 MB) (0.000008 MB)
+Operator #975 (gpu_0/comp_29_conv_3_w, WeightedSum) 0.0415457 ms/iter (0.001573 GFLOP, 37.858646 GFLOPS) (2.097152 MB) (0.000008 MB)
+Operator #976 (gpu_0/comp_29_spatbn_3_s, WeightedSum) 0.0335581 ms/iter (0.000003 GFLOP, 0.091543 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #977 (gpu_0/comp_29_spatbn_3_b, WeightedSum) 0.0330291 ms/iter (0.000003 GFLOP, 0.093009 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #978 (gpu_0/comp_30_conv_1_w, WeightedSum) 0.0496872 ms/iter (0.003146 GFLOP, 63.310627 GFLOPS) (4.194304 MB) (0.000008 MB)
+Operator #979 (gpu_0/comp_30_spatbn_1_s, WeightedSum) 0.0352649 ms/iter (0.000003 GFLOP, 0.087112 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #980 (gpu_0/comp_30_spatbn_1_b, WeightedSum) 0.0334115 ms/iter (0.000003 GFLOP, 0.091944 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #981 (gpu_0/comp_30_conv_2_w, WeightedSum) 0.0384922 ms/iter (0.000885 GFLOP, 22.984813 GFLOPS) (1.179648 MB) (0.000008 MB)
+Operator #982 (gpu_0/comp_30_spatbn_2_s, WeightedSum) 0.0342933 ms/iter (0.000003 GFLOP, 0.089580 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #983 (gpu_0/comp_30_spatbn_2_b, WeightedSum) 0.0331751 ms/iter (0.000003 GFLOP, 0.092600 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #984 (gpu_0/comp_30_conv_3_w, WeightedSum) 0.0647428 ms/iter (0.006291 GFLOP, 97.176144 GFLOPS) (8.388608 MB) (0.000008 MB)
+Operator #985 (gpu_0/comp_30_spatbn_3_s, WeightedSum) 0.034524 ms/iter (0.000006 GFLOP, 0.177963 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #986 (gpu_0/comp_30_spatbn_3_b, WeightedSum) 0.0331652 ms/iter (0.000006 GFLOP, 0.185254 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #987 (gpu_0/shortcut_projection_30_w, WeightedSum) 0.0655617 ms/iter (0.006291 GFLOP, 95.962377 GFLOPS) (8.388608 MB) (0.000008 MB)
+Operator #988 (gpu_0/shortcut_projection_30_spatbn_s, WeightedSum) 0.0358409 ms/iter (0.000006 GFLOP, 0.171424 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #989 (gpu_0/shortcut_projection_30_spatbn_b, WeightedSum) 0.0348635 ms/iter (0.000006 GFLOP, 0.176230 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #990 (gpu_0/comp_31_conv_1_w, WeightedSum) 0.0664175 ms/iter (0.006291 GFLOP, 94.725882 GFLOPS) (8.388608 MB) (0.000008 MB)
+Operator #991 (gpu_0/comp_31_spatbn_1_s, WeightedSum) 0.0347874 ms/iter (0.000003 GFLOP, 0.088308 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #992 (gpu_0/comp_31_spatbn_1_b, WeightedSum) 0.033211 ms/iter (0.000003 GFLOP, 0.092499 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #993 (gpu_0/comp_31_conv_2_w, WeightedSum) 0.0379209 ms/iter (0.000885 GFLOP, 23.331091 GFLOPS) (1.179648 MB) (0.000008 MB)
+Operator #994 (gpu_0/comp_31_spatbn_2_s, WeightedSum) 0.034456 ms/iter (0.000003 GFLOP, 0.089157 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #995 (gpu_0/comp_31_spatbn_2_b, WeightedSum) 0.0329914 ms/iter (0.000003 GFLOP, 0.093115 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #996 (gpu_0/comp_31_conv_3_w, WeightedSum) 0.0647489 ms/iter (0.006291 GFLOP, 97.166993 GFLOPS) (8.388608 MB) (0.000008 MB)
+Operator #997 (gpu_0/comp_31_spatbn_3_s, WeightedSum) 0.0344859 ms/iter (0.000006 GFLOP, 0.178160 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #998 (gpu_0/comp_31_spatbn_3_b, WeightedSum) 0.0331621 ms/iter (0.000006 GFLOP, 0.185272 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #999 (gpu_0/comp_32_conv_1_w, WeightedSum) 0.0647429 ms/iter (0.006291 GFLOP, 97.175992 GFLOPS) (8.388608 MB) (0.000008 MB)
+Operator #1000 (gpu_0/comp_32_spatbn_1_s, WeightedSum) 0.0343603 ms/iter (0.000003 GFLOP, 0.089406 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #1001 (gpu_0/comp_32_spatbn_1_b, WeightedSum) 0.0332793 ms/iter (0.000003 GFLOP, 0.092310 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #1002 (gpu_0/comp_32_conv_2_w, WeightedSum) 0.038013 ms/iter (0.000885 GFLOP, 23.274563 GFLOPS) (1.179648 MB) (0.000008 MB)
+Operator #1003 (gpu_0/comp_32_spatbn_2_s, WeightedSum) 0.0343981 ms/iter (0.000003 GFLOP, 0.089307 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #1004 (gpu_0/comp_32_spatbn_2_b, WeightedSum) 0.0336299 ms/iter (0.000003 GFLOP, 0.091347 GFLOPS) (0.004096 MB) (0.000008 MB)
+Operator #1005 (gpu_0/comp_32_conv_3_w, WeightedSum) 0.0664968 ms/iter (0.006291 GFLOP, 94.612912 GFLOPS) (8.388608 MB) (0.000008 MB)
+Operator #1006 (gpu_0/comp_32_spatbn_3_s, WeightedSum) 0.0341682 ms/iter (0.000006 GFLOP, 0.179816 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #1007 (gpu_0/comp_32_spatbn_3_b, WeightedSum) 0.0331357 ms/iter (0.000006 GFLOP, 0.185419 GFLOPS) (0.008192 MB) (0.000008 MB)
+Operator #1008 (gpu_0/last_out_L1000_w, WeightedSum) 0.0644188 ms/iter (0.006144 GFLOP, 95.375886 GFLOPS) (8.192000 MB) (0.000008 MB)
+Operator #1009 (gpu_0/last_out_L1000_b, WeightedSum) 0.0343854 ms/iter (0.000003 GFLOP, 0.087246 GFLOPS) (0.004000 MB) (0.000008 MB)
+Time per operator type:
+        178.041 ms.    48.6389%. ConvGradient
+        72.7179 ms.    19.8657%. Conv
+        33.3893 ms.    9.12159%. SpatialBNGradient
+        28.3609 ms.    7.74789%. SpatialBN
+        15.4884 ms.    4.23126%. ReluGradient
+        13.6661 ms.    3.73342%. Sum
+         11.205 ms.    3.06109%. WeightedSum
+        11.1498 ms.    3.04599%. Relu
+       0.965981 ms.   0.263896%. MaxPoolGradient
+       0.331866 ms.  0.0906622%. MaxPool
+       0.154112 ms.  0.0421018%. AveragePoolGradient
+       0.153832 ms.  0.0420252%. AveragePool
+       0.140336 ms.  0.0383383%. FCGradient
+      0.0787915 ms.   0.021525%. SoftmaxWithLoss
+      0.0786817 ms.   0.021495%. FC
+      0.0346286 ms. 0.00946016%. SoftmaxWithLossGradient
+      0.0268553 ms. 0.00733658%. Scale
+      0.0228303 ms. 0.00623699%. Accuracy
+      0.0204945 ms. 0.00559888%. ConstantFill
+      0.0177262 ms. 0.00484261%. LearningRate
+      0.0019531 ms. 0.000533566%. AtomicIter
+        366.047 ms in Total
+FLOP per operator type:
+        4368.19 GFLOP.    85.0045%. ConvGradient
+        764.923 GFLOP.    14.8853%. Conv
+        4.07509 GFLOP.  0.0793009%. SpatialBN
+       0.862224 GFLOP.  0.0167788%. Sum
+       0.393264 GFLOP. 0.00765287%. FCGradient
+       0.196656 GFLOP.  0.0038269%. FC
+       0.132533 GFLOP. 0.00257908%. WeightedSum
+              0 GFLOP.          0%. Relu
+        5138.77 GFLOP in Total
+Feature Memory Read per operator type:
+        8231.45 MB.    29.9218%. ConvGradient
+         6897.8 MB.    25.0739%. Sum
+        4156.35 MB.    15.1086%. Conv
+         4076.2 MB.    14.8172%. SpatialBN
+        3786.08 MB.    13.7626%. Relu
+        353.423 MB.    1.28471%. WeightedSum
+        8.58922 MB.  0.0312223%. FC
+              0 MB.          0%. FCGradient
+        27509.9 MB in Total
+Feature Memory Written per operator type:
+        4156.35 MB.    21.0694%. ConvGradient
+        4075.09 MB.    20.6574%. Conv
+        4075.09 MB.    20.6574%. SpatialBN
+        3786.08 MB.    19.1924%. Relu
+         3448.9 MB.    17.4831%. Sum
+        176.711 MB.   0.895781%. WeightedSum
+        8.58922 MB.  0.0435404%. FCGradient
+          0.192 MB. 0.000973285%. FC
+          19727 MB in Total
+Parameter Memory per operator type:
+        167.963 MB.    47.5989%. Conv
+        167.963 MB.    47.5989%. ConvGradient
+          8.196 MB.    2.32265%. FC
+          8.196 MB.    2.32265%. FCGradient
+       0.551424 MB.   0.156267%. SpatialBN
+       0.002512 MB. 0.000711871%. WeightedSum
+              0 MB.          0%. Relu
+              0 MB.          0%. Sum
+        352.873 MB in Total
+net_drawer will not run correctly. Please install the correct dependencies.
+Ignoring @/caffe2/caffe2/contrib/nccl:nccl_ops as it is not a valid file.
+Ignoring @/caffe2/caffe2/contrib/gloo:gloo_ops as it is not a valid file.
+Ignoring @/caffe2/caffe2/contrib/gloo:gloo_ops_gpu as it is not a valid file.
