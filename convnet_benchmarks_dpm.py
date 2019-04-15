@@ -569,6 +569,7 @@ def Inception(model, loss_scale, dtype='float'):
 
 
 def Resnet50(model, loss_scale, dtype='float'):
+
     initializer = (PseudoFP16Initializer if dtype == 'float16'
                        else Initializer)
     with brew.arg_scope([brew.conv, brew.fc],
@@ -707,10 +708,10 @@ def Benchmark(args, model_map):
 
     workspace.RunNetOnce(model.param_init_net)
     workspace.CreateNet(model.net)
-    workspace.BenchmarkNet(
+    ms_per_iter = workspace.BenchmarkNet(
         model.net.Proto().name, args.warmup_iterations, args.iterations,
         args.layer_wise_benchmark)
-
+    print("number of images/sec: {}".format(round(args.batch_size*1000/ms_per_iter[0],2)))
 
 def GetArgumentParser():
     parser = argparse.ArgumentParser(description="Caffe2 benchmark.")
