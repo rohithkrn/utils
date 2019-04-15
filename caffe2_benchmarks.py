@@ -11,10 +11,10 @@ from collections import OrderedDict
 # Dictionary which maps model and corresponding 'batch_size's
 # to run benchmarks. Comment the models you do not want to run.
 model_bs_map = OrderedDict([
-    ('AlexNet', [64, 256, 1024]),
+    ('AlexNet', [512, 1024]),
     ('VGGA', [32, 64]),
     ('Inception', [64, 128]),
-    ('Resnet50', [32, 64]),
+    ('Resnet50', [32, 64, 128]),
     ('Resnet101', [32, 64]),
     ('Resnext101', [32, 64]),
 ])
@@ -29,7 +29,7 @@ def get_benchmark_cmd(args):
         " --num_gpus " + str(args.num_gpus) + \
         " --batch_size " + str(args.batch_size) + \
         " --num_workers_per_device " + str(args.num_workers_per_device)
-    log_file = args.model + "_" + str(args.batch_size/args.num_gpus) + \
+    log_file = args.model + "_" + str(int(args.batch_size/args.num_gpus)) + \
         "_" + str(args.num_gpus) + 'g'
 
     if args.dtype == "float16":
