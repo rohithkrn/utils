@@ -660,7 +660,7 @@ def Benchmark(args, model_map):
     arg_scope = {
             'order': 'NCHW',
             'use_cudnn': True,
-            'ws_nbytes_limit': args.cudnn_ws,
+            'ws_nbytes_limit': args.cudnn_ws*1024*1024,
         }
     model = model_helper.ModelHelper(
         name=args.model, arg_scope=arg_scope
@@ -725,7 +725,7 @@ def GetArgumentParser():
     parser.add_argument(
         "--cudnn_ws",
         type=int,
-        help="The cudnn workspace size."
+        help="The cudnn workspace size in MB."
     )
     parser.add_argument(
         "--iterations",
