@@ -725,6 +725,7 @@ def GetArgumentParser():
     parser.add_argument(
         "--cudnn_ws",
         type=int,
+        default=1024,
         help="The cudnn workspace size in MB."
     )
     parser.add_argument(
